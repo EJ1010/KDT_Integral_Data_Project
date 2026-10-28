@@ -1,0 +1,14 @@
+﻿컬럼명,의미,현재_자료형,원본_추가_구분
+게시물 링크,X 게시물 URL,string,원본
+계정 ID,게시 계정 ID,string,원본
+댓글 개수,댓글 수,string,원본
+리포스트 개수,리포스트 수,string,원본
+본문,게시물 본문,string,원본
+계정 이름,계정 표시 이름,string,원본
+작성 시각,게시 작성 시각,string,원본
+조회수,조회수,string,원본
+좋아요 수,좋아요 수,string,원본
+키워드,수집 키워드,string,원본
+source_file,원본 파일명,string,추가
+source_row,헤더를 제외한 원본 CSV 레코드 순번. 1부터 시작하며 본문 줄바꿈이 들어 있는 물리 줄 번호가 아니다,string,추가
+source_year,원본 파일명에서 추출한 연도,string,추가
