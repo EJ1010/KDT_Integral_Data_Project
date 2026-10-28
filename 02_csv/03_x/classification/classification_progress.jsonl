@@ -1,0 +1,11 @@
+{"event": "saved_batch", "batch": 0, "rows": 1000, "through": 1000, "at": "2026-10-28T22:01:26+09:00"}
+{"event": "saved_batch", "batch": 1, "rows": 1000, "through": 2000, "at": "2026-10-28T22:01:26+09:00"}
+{"event": "saved_batch", "batch": 2, "rows": 1000, "through": 3000, "at": "2026-10-28T22:01:26+09:00"}
+{"event": "saved_batch", "batch": 3, "rows": 1000, "through": 4000, "at": "2026-10-28T22:01:26+09:00"}
+{"event": "saved_batch", "batch": 4, "rows": 1000, "through": 5000, "at": "2026-10-28T22:01:27+09:00"}
+{"event": "saved_batch", "batch": 0, "rows": 1000, "through": 1000, "at": "2026-10-28T22:01:43+09:00"}
+{"event": "saved_batch", "batch": 1, "rows": 1000, "through": 2000, "at": "2026-10-28T22:01:43+09:00"}
+{"event": "saved_batch", "batch": 2, "rows": 1000, "through": 3000, "at": "2026-10-28T22:01:43+09:00"}
+{"event": "saved_batch", "batch": 3, "rows": 1000, "through": 4000, "at": "2026-10-28T22:01:44+09:00"}
+{"event": "saved_batch", "batch": 4, "rows": 1000, "through": 5000, "at": "2026-10-28T22:01:44+09:00"}
+{"event": "finished", "rows": 5000, "review_rows": 1627, "judgments": {"확인 필요": 1538, "분류 가능": 3458, "미언급": 4}, "at": "2026-10-28T22:01:45+09:00"}
