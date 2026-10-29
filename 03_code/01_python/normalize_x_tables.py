@@ -59,7 +59,7 @@ ORIGINAL_COLUMNS = [
     "source_year",
 ]
 
-POST_COLUMNS = [
+POST_INPUT_COLUMNS = [
     "post_id",
     "게시물 링크",
     "계정 ID",
@@ -71,6 +71,19 @@ POST_COLUMNS = [
     "조회수",
     "좋아요 수",
 ]
+POST_SOURCE_TO_STORED = {
+    "게시물 링크": "post_url",
+    "계정 ID": "account_id",
+    "계정 이름": "account_name",
+    "본문": "text",
+    "작성 시각": "created_at",
+    "댓글 개수": "comment_count",
+    "리포스트 개수": "repost_count",
+    "조회수": "view_count",
+    "좋아요 수": "like_count",
+}
+POST_STORED_TO_SOURCE = {stored: source for source, stored in POST_SOURCE_TO_STORED.items()}
+POST_COLUMNS = ["post_id", *POST_SOURCE_TO_STORED.values()]
 SOURCE_FILE_COLUMNS = ["source_file", "source_year"]
 POST_SOURCE_COLUMNS = ["source_file", "source_row", "post_id", "input_row_no"]
 KEYWORD_COLUMNS = ["keyword"]
@@ -129,77 +142,77 @@ COLUMN_DOCS: dict[str, dict[str, str]] = {
         "stored": "post_id",
         "note": "새로 추출한 식별자. 링크 컬럼도 그대로 둔다. 정수로 변환하지 않는다.",
     },
-    "게시물 링크": {
+    "post_url": {
         "description": "X 게시물 URL 원문.",
         "sql": "TEXT",
         "null_policy": "비허용",
         "origin": "게시물 링크",
-        "stored": "게시물 링크",
-        "note": "컬럼명을 바꾸지 않는다.",
+        "stored": "post_url",
+        "note": "저장명만 post_url이다. 링크 문자열은 바꾸지 않는다.",
     },
-    "계정 ID": {
+    "account_id": {
         "description": "수집 시점에 기록된 @사용자명. 숫자형 사용자 고유 ID가 아니다.",
         "sql": "TEXT",
         "null_policy": "비허용",
         "origin": "계정 ID",
-        "stored": "계정 ID",
-        "note": "컬럼명을 바꾸지 않는다. 계정 테이블로 분리하지 않는다.",
+        "stored": "account_id",
+        "note": "저장명만 account_id다. 계정 테이블로 분리하지 않는다.",
     },
-    "계정 이름": {
+    "account_name": {
         "description": "수집 시점에 기록된 표시 이름. 문자열 null과 앞뒤 공백을 유지한다.",
         "sql": "TEXT",
         "null_policy": "비허용",
         "origin": "계정 이름",
-        "stored": "계정 이름",
-        "note": "컬럼명을 바꾸지 않는다. 계정 ID와 일대일로 가정하지 않는다.",
+        "stored": "account_name",
+        "note": "저장명만 account_name이다. 계정 ID와 일대일로 가정하지 않는다.",
     },
-    "본문": {
+    "text": {
         "description": "게시물 본문 원문. 줄바꿈과 기호를 유지한다.",
         "sql": "TEXT",
         "null_policy": "비허용",
         "origin": "본문",
-        "stored": "본문",
-        "note": "컬럼명을 바꾸지 않는다. 내용을 수정하지 않는다.",
+        "stored": "text",
+        "note": "저장명만 text다. 내용을 수정하지 않는다.",
     },
-    "작성 시각": {
+    "created_at": {
         "description": "게시 작성 시각. 한국시간(Asia/Seoul)이다.",
         "sql": "TIMESTAMP WITH TIME ZONE",
         "null_policy": "비허용",
         "origin": "작성 시각",
-        "stored": "작성 시각",
-        "note": "컬럼명을 바꾸지 않는다. 연·월 컬럼을 추가하지 않는다.",
+        "stored": "created_at",
+        "note": "저장명만 created_at이다. 연·월 컬럼을 추가하지 않는다.",
     },
-    "댓글 개수": {
+    "comment_count": {
         "description": "수집 시점의 댓글 수. 기존 0을 유지한다.",
         "sql": "BIGINT",
         "null_policy": "비허용",
         "origin": "댓글 개수",
-        "stored": "댓글 개수",
-        "note": "컬럼명을 바꾸지 않는다. 반응 지표를 별도 테이블로 분리하지 않는다.",
+        "stored": "comment_count",
+        "note": "저장명만 comment_count다. 반응 지표를 별도 테이블로 분리하지 않는다.",
     },
-    "리포스트 개수": {
+    "repost_count": {
         "description": "수집 시점의 리포스트 수. 기존 0을 유지한다.",
         "sql": "BIGINT",
         "null_policy": "비허용",
         "origin": "리포스트 개수",
-        "stored": "리포스트 개수",
-        "note": "컬럼명을 바꾸지 않는다.",
+        "stored": "repost_count",
+        "note": "저장명만 repost_count다.",
     },
-    "조회수": {
+    "view_count": {
         "description": "수집 시점의 조회수. 결측은 그대로 둔다.",
         "sql": "BIGINT",
         "null_policy": "허용",
         "origin": "조회수",
-        "stored": "조회수",
-        "note": "컬럼명을 바꾸지 않는다. 0이나 평균으로 채우지 않는다.",
+        "stored": "view_count",
+        "note": "저장명만 view_count다. 0이나 평균으로 채우지 않는다.",
     },
-    "좋아요 수": {
+    "like_count": {
         "description": "수집 시점의 좋아요 수. 기존 0을 유지한다.",
         "sql": "BIGINT",
         "null_policy": "비허용",
         "origin": "좋아요 수",
-        "stored": "좋아요 수",
-        "note": "컬럼명을 바꾸지 않는다.",
+        "stored": "like_count",
+        "note": "저장명만 like_count다.",
     },
     "source_file": {
         "description": "원본 CSV 파일명.",
@@ -252,21 +265,21 @@ COLUMN_DOCS: dict[str, dict[str, str]] = {
 }
 
 STRING_BY_TABLE = {
-    "x_posts": ["post_id", "게시물 링크", "계정 ID", "계정 이름", "본문"],
+    "x_posts": ["post_id", "post_url", "account_id", "account_name", "text"],
     "x_source_files": ["source_file"],
     "x_post_sources": ["source_file", "post_id"],
     "x_keywords": ["keyword"],
     "x_post_keywords": ["post_id", "keyword"],
 }
 INT_BY_TABLE = {
-    "x_posts": ["댓글 개수", "리포스트 개수", "조회수", "좋아요 수"],
+    "x_posts": ["comment_count", "repost_count", "view_count", "like_count"],
     "x_source_files": ["source_year"],
     "x_post_sources": ["source_row", "input_row_no"],
     "x_keywords": [],
     "x_post_keywords": ["keyword_order"],
 }
-NULLABLE_INT = {("x_posts", "조회수")}
-DATETIME_BY_TABLE = {"x_posts": ["작성 시각"]}
+NULLABLE_INT = {("x_posts", "view_count")}
+DATETIME_BY_TABLE = {"x_posts": ["created_at"]}
 
 
 class NormalizationConflict(Exception):
@@ -434,13 +447,14 @@ def build_tables(frame: pd.DataFrame) -> dict[str, pd.DataFrame]:
     working["input_row_no"] = pd.Series(range(1, len(working) + 1), dtype="Int64")
     parts = split_keywords(working["키워드"])
 
-    posts = working[POST_COLUMNS].copy()
-    for column in STRING_BY_TABLE["x_posts"]:
+    posts = working[POST_INPUT_COLUMNS].copy()
+    for column in ("post_id", "게시물 링크", "계정 ID", "계정 이름", "본문"):
         posts[column] = posts[column].astype("string")
     posts["댓글 개수"] = posts["댓글 개수"].astype("Int64")
     posts["리포스트 개수"] = posts["리포스트 개수"].astype("Int64")
     posts["조회수"] = posts["조회수"].astype("Int64")
     posts["좋아요 수"] = posts["좋아요 수"].astype("Int64")
+    posts = posts.rename(columns=POST_SOURCE_TO_STORED)
     posts = posts.reset_index(drop=True)[POST_COLUMNS]
 
     source_files = (
@@ -567,8 +581,9 @@ def restore_original(tables: dict[str, pd.DataFrame]) -> pd.DataFrame:
         how="left",
         validate="many_to_one",
     )
+    posts = tables["x_posts"].rename(columns=POST_STORED_TO_SOURCE)
     restored = sources.merge(
-        tables["x_posts"],
+        posts,
         on="post_id",
         how="left",
         validate="one_to_one",
@@ -607,8 +622,8 @@ def compare_frames(left: pd.DataFrame, right: pd.DataFrame) -> tuple[bool, str]:
 
 def write_csv_table(path: Path, frame: pd.DataFrame) -> None:
     export = frame.copy()
-    if "작성 시각" in export.columns:
-        export["작성 시각"] = frame["작성 시각"].map(lambda value: value.isoformat(sep=" ", timespec="seconds"))
+    if "created_at" in export.columns:
+        export["created_at"] = frame["created_at"].map(lambda value: value.isoformat(sep=" ", timespec="seconds"))
     export.to_csv(path, index=False, encoding="utf-8-sig", na_rep="", lineterminator="\n")
 
 
@@ -714,17 +729,17 @@ def keyword_examples(frame: pd.DataFrame) -> list[str]:
 def preservation_checks(original: pd.DataFrame, posts: pd.DataFrame) -> list[tuple[str, bool, str]]:
     aligned = original.reset_index(drop=True)
     post_aligned = posts.reset_index(drop=True)
-    view_na = null_count(post_aligned["조회수"])
-    literal_null = int((post_aligned["계정 이름"] == "null").sum())
-    padded_name = int((post_aligned["계정 이름"] != post_aligned["계정 이름"].str.strip()).sum())
-    zero_comments = int((post_aligned["댓글 개수"] == 0).sum())
-    zero_reposts = int((post_aligned["리포스트 개수"] == 0).sum())
-    zero_likes = int((post_aligned["좋아요 수"] == 0).sum())
-    timezone_name = str(post_aligned["작성 시각"].dt.tz)
-    like_sum_same = int(post_aligned["좋아요 수"].sum()) == int(aligned["좋아요 수"].sum())
-    comment_sum_same = int(post_aligned["댓글 개수"].sum()) == int(aligned["댓글 개수"].sum())
-    repost_sum_same = int(post_aligned["리포스트 개수"].sum()) == int(aligned["리포스트 개수"].sum())
-    view_sum_same = int(post_aligned["조회수"].sum(skipna=True)) == int(aligned["조회수"].sum(skipna=True))
+    view_na = null_count(post_aligned["view_count"])
+    literal_null = int((post_aligned["account_name"] == "null").sum())
+    padded_name = int((post_aligned["account_name"] != post_aligned["account_name"].str.strip()).sum())
+    zero_comments = int((post_aligned["comment_count"] == 0).sum())
+    zero_reposts = int((post_aligned["repost_count"] == 0).sum())
+    zero_likes = int((post_aligned["like_count"] == 0).sum())
+    timezone_name = str(post_aligned["created_at"].dt.tz)
+    like_sum_same = int(post_aligned["like_count"].sum()) == int(aligned["좋아요 수"].sum())
+    comment_sum_same = int(post_aligned["comment_count"].sum()) == int(aligned["댓글 개수"].sum())
+    repost_sum_same = int(post_aligned["repost_count"].sum()) == int(aligned["리포스트 개수"].sum())
+    view_sum_same = int(post_aligned["view_count"].sum(skipna=True)) == int(aligned["조회수"].sum(skipna=True))
     return [
         ("조회수 결측 유지", view_na == null_count(aligned["조회수"]) == 946, f"x_posts 결측 {view_na}"),
         ("계정 이름 문자열 null 유지", literal_null == int((aligned["계정 이름"] == "null").sum()) == 2, f"{literal_null}건"),
@@ -750,13 +765,13 @@ def render_definitions(tables: dict[str, pd.DataFrame]) -> str:
         "# X 정규화 테이블 정의서",
         "",
         "- 입력: `typed/x_chiikawa_2022_2026_typed.parquet`",
-        "- 기존 컬럼명은 바꾸지 않았다. 새로 만든 식별자와 순서 컬럼만 영문이다.",
+        "- x_posts의 원본 컬럼은 영어 저장명으로 둔다. 값, 결측, 문자열 null은 바꾸지 않는다.",
         "- CSV는 기본키와 외래키를 강제하지 않는다. `normalize_x_tables.py`가 검증한다.",
         "- 조회수만 NULL을 허용한다. 계정 이름의 문자열 `null`은 NULL이 아니다.",
         "",
         "## 컬럼명 매핑",
         "",
-        "기존 컬럼은 원본명을 저장명으로 그대로 쓴다.",
+        "x_posts에 남기는 원본 컬럼만 영어 저장명을 쓴다. 나머지 저장명은 원래 영문이다.",
         "",
         markdown_table(
             ["원본 또는 출처", "저장 컬럼", "설명"],

@@ -1,4 +1,4 @@
-﻿post_id,게시물 링크,계정 ID,계정 이름,본문,작성 시각,댓글 개수,리포스트 개수,조회수,좋아요 수
+﻿post_id,post_url,account_id,account_name,text,created_at,comment_count,repost_count,view_count,like_count
 1547592667457982465,https://x.com/ATEEZofficial/status/1547592667457982465,@ATEEZofficial,ATEEZ(에이티즈),"[#산] 친구 생겼네 치이카와☺
 #ATEEZ #에이티즈 https://t.co/u2Yox70zkT",2022-07-14 23:43:39+09:00,3457,23239,,69221
 1557283755013709824,https://x.com/cheese_6091/status/1557283755013709824,@cheese_6091,포♡,치이카와 푸딩•••,2022-08-10 17:32:34+09:00,7,5739,,8973
