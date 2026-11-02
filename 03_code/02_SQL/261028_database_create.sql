@@ -44,12 +44,33 @@ TO
     'integral_yr'@'%';
     
     
+GRANT
+		SELECT,
+		INSERT,
+		UPDATE,
+		DELETE,
+		CREATE,
+		DROP,
+		ALTER,
+		INDEX,
+		REFERENCES,
+		CREATE TEMPORARY TABLES,
+		LOCK TABLES,
+		EXECUTE,
+		CREATE VIEW,
+		SHOW VIEW,
+		TRIGGER,
+		EVENT
+ON 	daewon.*
+TO	'integral_ej'@'%';
+    
+    
 -- 권한 확인
 SHOW GRANTS FOR 'integral_gy'@'%';
 SHOW GRANTS FOR 'integral_jn'@'%';
 SHOW GRANTS FOR 'integral_sj'@'%';
 SHOW GRANTS FOR 'integral_yr'@'%';
-
+SHOW GRANTS FOR 'integral_ej'@'%';
 
 
 
