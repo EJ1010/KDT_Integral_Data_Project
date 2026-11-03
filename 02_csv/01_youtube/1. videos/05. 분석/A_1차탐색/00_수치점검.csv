@@ -1,0 +1,5 @@
+﻿컬럼,자료형,결측,음수,0,소수값이_있는_건수
+view_count,float64,8,0,0,0
+like_count,float64,489,0,146,0
+comment_count,float64,341,0,1744,0
+duration_sec,변환값,0,0,0,해당 없음

@@ -1,0 +1,13 @@
+﻿항목,값
+상태_collected_count_최댓값,100.0
+상태_collected_count_100,757
+상태_capped,752
+상태_next_token_있음,752
+분석테이블_영상별댓글_최댓값,100
+분석테이블_100초과_영상,0
+댓글컬럼,post_id | account_id | account_name | created_at | post_title | title_without_hashtags | view_count | like_count | comment_count | duration | final_class | comment_id | comment_published_at | comment_updated_at | comment_description | comment_like_count | comment_reply_count | video_publish_year
+작성자ID_컬럼,없음
+대댓글본문_컬럼,없음
+comment_reply_count,있음
+상태파일_중복video_id,0
+댓글정렬순서,확인 불가. 노트북의 commentThreads order=relevance 코드는 주석 처리된 초안
