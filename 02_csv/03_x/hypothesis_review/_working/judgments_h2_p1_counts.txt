@@ -1,0 +1,42 @@
+posts_read	218
+rows_written	70
+posts_with_rows	68
+noise_excluded	111
+promo_excluded	39
+direct_human_vs_animal_comparison_rows	1
+인간형 대비 동물형 선호 rows	1
+동물형 대비 인간형 선호 rows	0
+
+[facet]
+동물 특징 존재 언급	26
+동물 부위 호감	26
+동물 유사성 긍정	12
+기타 관련	4
+동물 특징 부정	1
+인간형 대비 동물형 선호	1
+
+[relation]
+지지	39
+중립·관련 언급	28
+판단 불가	2
+혼합	1
+
+[evidence_level]
+명시적 평가·경험	40
+단순 공존	24
+직접적인 이유·비교	4
+판단 불가	2
+
+[speaker]
+작성자 개인	65
+인용된 타인	5
+
+check	posts_read = posts_with_rows + noise_excluded + promo_excluded
+sum	218
+
+direct comparison post_ids
+2047494837407240583	인간형 대비 동물형 선호	지지
+
+note	2020171308567601359는 아기 옆모습 둘 중 볼록한 주둥이가 더 귀엽다는 비교이고 인간형 대비가 아니다.
+note	의인화 언급이지만 인간형·동물형 우열을 말하지 않은 행: 1663586576579063808, 2105203821433778222.
+note	promo_excluded는 입고·예약·품절·가챠·공구·양도·출판/콜라보 광고 문안이다. 털·꼬리를 칭찬해도 광고 문안이면 행을 만들지 않았다.

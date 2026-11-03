@@ -1,0 +1,13 @@
+{
+  "version": "2026-11-03.reaction.v3",
+  "posts": 5000,
+  "evidence_rows": 1812,
+  "analysis_target": 4773,
+  "bad_quotes": 0,
+  "overrides": 0,
+  "direct_posts": 47,
+  "feature_posts": 125,
+  "assertions_failed": 1,
+  "dev_sample_posts": 142,
+  "holdout_posts": 56
+}
