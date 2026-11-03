@@ -1,0 +1,16 @@
+﻿항목,정의
+분석대상,한국어 제목과 치이카와 내용 관련성 기준 A_우선포함 영상. 한국 발생 조회수나 한국인 시청자 행동이 아님.
+영상수,고유 post_id 수. 이 파일은 영상당 한 행.
+채널수,결측이 아닌 고유 account_id 수. 이름이 같아도 ID가 다르면 합치지 않음.
+활동채널수,"해당 기간에 영상을 게시한, 결측이 아닌 고유 account_id 수."
+영상길이,ISO-8601 duration을 초로 변환. 실패·결측은 변환 불가·결측.
+좋아요율,like_count / view_count × 100. 조회수 결측·0 또는 좋아요 결측이면 계산 불가. 결측을 0으로 채우지 않음.
+댓글률,comment_count / view_count × 100. comment_count는 영상 메타데이터이며 수집 댓글 행 수가 아님.
+게시후_경과일,시간대가 명시된 collected_at - created_at. 둘 다 UTC로 맞춘 뒤 일 단위.
+게시월연도,created_at이 UTC(Z)이면 Asia/Seoul로 변환한 뒤 집계.
+조회수_의미,각 영상의 수집 시점 누적조회수. 해당 연도·월에 발생한 조회수가 아님.
+일평균_누적조회수,누적조회수 / 게시 후 경과일. 최근 조회 속도나 성장률이 아님.
+채널_표시이름,영상 수가 가장 많은 이름. 동률이면 가장 최근 게시 영상에 쓰인 이름.
+점유율_분모,영상 점유율은 A 전체 영상 수. 조회수 점유율은 조회수가 있는 영상 합계. 채널 ID 결측은 분모에 포함하고 한 채널로 묶지 않음.
+입력파일,c:\Users\user\DATA_MKT_260920\03.data.project\KDT_Integral_Data_Project\02_csv\01_youtube\1. videos\02. cleaning\2. 제목분류\youtube_total_cleaning_classified_A.csv
+원본수정,하지 않음
