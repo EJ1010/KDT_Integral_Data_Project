@@ -1,0 +1,2 @@
+﻿raw_rows,source_columns,null_description,missing_or_blank_description,duplicate_post_id_removed,duplicate_description_removed,analysis_rows,source_file,encoding,tokenizer,dedupe_text,detected_ip_posts,posts_without_detected_ip,min_keyword_df,min_co_count
+13464,post_id|description|media_type_id|post_url|created_at|like_count|comment_count,138,212,0,513,12739,C:\Users\user\Desktop\KDT_2026\프로젝트\02_데이터_프로젝트\02_csv\02_instagram\instagram_normalized_3nf_posts.csv,utf-8-sig,kiwi,True,9920,2819,10,3

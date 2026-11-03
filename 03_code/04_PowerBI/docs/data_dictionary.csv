@@ -1,0 +1,12 @@
+﻿table,column,description,data_type
+fact_posts.csv,post_id,게시물 고유키,정수
+fact_posts.csv,post_date,게시일,날짜
+fact_posts.csv,is_analysis_included,정제 분석 포함 여부,0/1
+dim_date.csv,date,날짜 차원 고유키,날짜
+dim_keyword.csv,keyword,형태소 키워드 고유키,텍스트
+bridge_post_keyword.csv,term_count,게시물 내 키워드 출현 횟수,정수
+dim_label.csv,label_key,분석축과 분류명을 결합한 고유키,텍스트
+bridge_post_label.csv,label_key,게시물–분류 연결키,텍스트
+summary_axis_distribution.csv,share_pct,각 분석 분모 대비 게시물 언급률,백분율 숫자
+analysis_cross_pairs.csv,lift,두 분류의 연관 향상도,소수
+fact_keyword_pairs.csv,lift,형태소 키워드 연관 향상도,소수

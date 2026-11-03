@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><title>Instagram EDA 보고서</title>
+<style>
+body{font-family:'Malgun Gothic',Arial,sans-serif;color:#172033;background:#f5f7fb;margin:0;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 28px 64px} h1{font-size:30px;margin:0 0 8px} h2{margin-top:38px;border-bottom:2px solid #dce3ee;padding-bottom:8px}
+.sub{color:#5b6678} .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0} .card{background:white;border:1px solid #e1e7ef;border-radius:10px;padding:18px}
+.k{font-size:13px;color:#64748b} .v{font-size:25px;font-weight:700;margin-top:4px} .note{background:#fff7ed;border-left:4px solid #f59e0b;padding:14px 16px;margin:18px 0}
+.insight{background:#eef6ff;border-left:4px solid #3b82f6;padding:14px 16px;margin:14px 0} table.data{border-collapse:collapse;width:100%;background:white;font-size:13px}
+table.data th{background:#263b5a;color:white;padding:8px;text-align:center} table.data td{border-bottom:1px solid #e5e9f0;padding:7px 9px;text-align:right} table.data td:nth-child(-n+2){text-align:left}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px} img{max-width:100%;background:white;border:1px solid #e1e7ef;border-radius:8px} code{background:#e9eef5;padding:2px 5px;border-radius:4px}
+@media(max-width:800px){.cards,.grid2{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<h1>인스타그램 게시물 EDA</h1><div class="sub">대원미디어 IP 사업 다각화를 위한 국내 창작자 협업 전략 · 원본 전체와 치이카와 필터 비교</div>
+<div class="cards">
+<div class="card"><div class="k">전체 게시물</div><div class="v">13,464</div></div>
+<div class="card"><div class="k">치이카와 필터</div><div class="v">12,534</div></div>
+<div class="card"><div class="k">필터 포함률</div><div class="v">93.1%</div></div>
+<div class="card"><div class="k">분석 기간</div><div class="v" style="font-size:16px">2014-08-20 ~ 2026-10-27</div></div>
+</div>
+<div class="note"><b>해석 범위:</b> 해시태그 기반 수집 자료이므로 인스타그램 전체 이용자나 실제 구매 전환을 대표하지 않습니다. 좋아요 결측은 0으로 대체하지 않았고, 이상치는 오류로 삭제하지 않고 별도 표시했습니다.</div>
+<h2>핵심 점검 결과</h2>
+<div class="insight">전체 13,464건 중 치이카와 필터는 12,534건(93.1%)입니다. 필터 post_id의 전체 데이터셋 이탈은 0건입니다.</div>
+<div class="insight">치이카와 필터의 좋아요 중앙값은 450, 99백분위는 43,161이고 댓글 중앙값은 5입니다. IQR 기준 좋아요 이상치는 1,426건으로 삭제 대신 별도 검토 대상으로 유지했습니다.</div>
+<div class="insight">수집 키워드 상위 항목은 &#x27;치이카와&#x27;(2,928건), 치이카와 필터에서 가장 널리 쓰인 해시태그는 #치이카와(5,445건)입니다. 빈도는 수집 설계의 영향을 받으므로 창작자 협업 후보 평가는 반응률·콘텐츠 맥락·팬덤 자발성 분류와 결합해야 합니다.</div>
+<table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>rows</th>
+      <th>columns</th>
+      <th>unique_post_ids</th>
+      <th>full_duplicate_rows</th>
+      <th>duplicate_post_ids</th>
+      <th>invalid_dates</th>
+      <th>invalid_instagram_urls</th>
+      <th>invalid_media_type_fk</th>
+      <th>negative_likes</th>
+      <th>negative_comments</th>
+      <th>date_min_utc</th>
+      <th>date_max_utc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체 게시물</td>
+      <td>13,464</td>
+      <td>7</td>
+      <td>13,464</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2014-08-20T05:42:52+00:00</td>
+      <td>2026-10-27T12:23:00+00:00</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>12,534</td>
+      <td>7</td>
+      <td>12,534</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2014-08-20T05:42:52+00:00</td>
+      <td>2026-10-27T12:23:00+00:00</td>
+    </tr>
+  </tbody>
+</table>
+<h2>날짜와 게시물 흐름</h2><img src="figures/01_monthly_posts.png" alt="월별 게시물 수">
+<h2>좋아요·댓글 분포와 이상치</h2><div class="grid2"><img src="figures/02_engagement_distributions.png"><img src="figures/06_like_comment_scatter.png"></div>
+<table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>metric</th>
+      <th>valid_count</th>
+      <th>missing_count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>p25</th>
+      <th>median</th>
+      <th>p75</th>
+      <th>p90</th>
+      <th>p95</th>
+      <th>p99</th>
+      <th>max</th>
+      <th>zero_count</th>
+      <th>zero_pct</th>
+      <th>iqr_lower</th>
+      <th>iqr_upper</th>
+      <th>iqr_outlier_count</th>
+      <th>iqr_outlier_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체 게시물</td>
+      <td>좋아요</td>
+      <td>11,300</td>
+      <td>2,164</td>
+      <td>2,766.54</td>
+      <td>9,136.31</td>
+      <td>0</td>
+      <td>62</td>
+      <td>406</td>
+      <td>1,811.50</td>
+      <td>6,112.40</td>
+      <td>12,023</td>
+      <td>39,155.28</td>
+      <td>222,028</td>
+      <td>41</td>
+      <td>0.4%</td>
+      <td>0</td>
+      <td>4,435.75</td>
+      <td>1,479</td>
+      <td>11.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>댓글</td>
+      <td>13,464</td>
+      <td>0</td>
+      <td>110.30</td>
+      <td>844.65</td>
+      <td>0</td>
+      <td>2</td>
+      <td>4</td>
+      <td>20</td>
+      <td>74</td>
+      <td>195</td>
+      <td>2,458.25</td>
+      <td>27,789</td>
+      <td>2,249</td>
+      <td>16.7%</td>
+      <td>0</td>
+      <td>47</td>
+      <td>1,861</td>
+      <td>13.8%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>좋아요</td>
+      <td>10,816</td>
+      <td>1,718</td>
+      <td>2,855.57</td>
+      <td>9,315.53</td>
+      <td>0</td>
+      <td>69</td>
+      <td>450</td>
+      <td>1,875.25</td>
+      <td>6,330.50</td>
+      <td>12,442.75</td>
+      <td>43,160.75</td>
+      <td>222,028</td>
+      <td>41</td>
+      <td>0.4%</td>
+      <td>0</td>
+      <td>4,584.62</td>
+      <td>1,426</td>
+      <td>11.4%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>댓글</td>
+      <td>12,534</td>
+      <td>0</td>
+      <td>118.07</td>
+      <td>874.86</td>
+      <td>0</td>
+      <td>2</td>
+      <td>5</td>
+      <td>22</td>
+      <td>81</td>
+      <td>220</td>
+      <td>2,644.73</td>
+      <td>27,789</td>
+      <td>1,858</td>
+      <td>14.8%</td>
+      <td>0</td>
+      <td>52</td>
+      <td>1,711</td>
+      <td>13.7%</td>
+    </tr>
+  </tbody>
+</table>
+<p><b>상관계수:</b> <table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>complete_pairs</th>
+      <th>pearson</th>
+      <th>spearman</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체 게시물</td>
+      <td>11,300</td>
+      <td>0.07</td>
+      <td>0.67</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>10,816</td>
+      <td>0.07</td>
+      <td>0.68</td>
+    </tr>
+  </tbody>
+</table></p>
+<h2>게시 유형</h2><img src="figures/03_media_types.png"><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>media_type</th>
+      <th>post_count</th>
+      <th>share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체 게시물</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>8,711</td>
+      <td>64.7%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>IMAGE</td>
+      <td>4,709</td>
+      <td>35.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>VIDEO</td>
+      <td>44</td>
+      <td>0.3%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>8,433</td>
+      <td>67.3%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>IMAGE</td>
+      <td>4,058</td>
+      <td>32.4%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>VIDEO</td>
+      <td>43</td>
+      <td>0.3%</td>
+    </tr>
+  </tbody>
+</table>
+<h2>키워드와 해시태그</h2><div class="grid2"><img src="figures/04_source_keywords.png"><img src="figures/05_top_hashtags.png"></div>
+<h3>수집 키워드</h3><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>keyword</th>
+      <th>tagged_posts</th>
+      <th>filtered_posts</th>
+      <th>share_of_all_posts</th>
+      <th>filtered_retention</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>치이카와</td>
+      <td>2,928</td>
+      <td>2,889</td>
+      <td>21.7%</td>
+      <td>98.7%</td>
+    </tr>
+    <tr>
+      <td>하치와레</td>
+      <td>2,206</td>
+      <td>1,966</td>
+      <td>16.4%</td>
+      <td>89.1%</td>
+    </tr>
+    <tr>
+      <td>모몽가</td>
+      <td>2,125</td>
+      <td>1,770</td>
+      <td>15.8%</td>
+      <td>83.3%</td>
+    </tr>
+    <tr>
+      <td>쿠리만쥬</td>
+      <td>1,821</td>
+      <td>1,620</td>
+      <td>13.5%</td>
+      <td>89.0%</td>
+    </tr>
+    <tr>
+      <td>우사기</td>
+      <td>1,026</td>
+      <td>979</td>
+      <td>7.6%</td>
+      <td>95.4%</td>
+    </tr>
+    <tr>
+      <td>시사</td>
+      <td>893</td>
+      <td>893</td>
+      <td>6.6%</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>먼작귀</td>
+      <td>885</td>
+      <td>874</td>
+      <td>6.6%</td>
+      <td>98.8%</td>
+    </tr>
+    <tr>
+      <td>카니</td>
+      <td>722</td>
+      <td>717</td>
+      <td>5.4%</td>
+      <td>99.3%</td>
+    </tr>
+    <tr>
+      <td>랏코</td>
+      <td>609</td>
+      <td>584</td>
+      <td>4.5%</td>
+      <td>95.9%</td>
+    </tr>
+    <tr>
+      <td>아노코</td>
+      <td>153</td>
+      <td>147</td>
+      <td>1.1%</td>
+      <td>96.1%</td>
+    </tr>
+    <tr>
+      <td>갑옷씨</td>
+      <td>49</td>
+      <td>48</td>
+      <td>0.4%</td>
+      <td>98.0%</td>
+    </tr>
+    <tr>
+      <td>파자마파티즈</td>
+      <td>28</td>
+      <td>28</td>
+      <td>0.2%</td>
+      <td>100.0%</td>
+    </tr>
+    <tr>
+      <td>데카츠요</td>
+      <td>19</td>
+      <td>19</td>
+      <td>0.1%</td>
+      <td>100.0%</td>
+    </tr>
+  </tbody>
+</table>
+<h3>치이카와 필터 상위 해시태그</h3><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>hashtag</th>
+      <th>document_count</th>
+      <th>document_share</th>
+      <th>occurrence_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>치이카와</td>
+      <td>5,445</td>
+      <td>43.4%</td>
+      <td>5,489</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>먼작귀</td>
+      <td>3,864</td>
+      <td>30.8%</td>
+      <td>3,891</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>chiikawa</td>
+      <td>2,444</td>
+      <td>19.5%</td>
+      <td>2,835</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>우사기</td>
+      <td>2,273</td>
+      <td>18.1%</td>
+      <td>2,288</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>하치와레</td>
+      <td>1,932</td>
+      <td>15.4%</td>
+      <td>1,949</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>모몽가</td>
+      <td>1,254</td>
+      <td>10.0%</td>
+      <td>1,262</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>쿠리만쥬</td>
+      <td>1,088</td>
+      <td>8.7%</td>
+      <td>1,102</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>카니</td>
+      <td>723</td>
+      <td>5.8%</td>
+      <td>726</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>치이카와굿즈</td>
+      <td>718</td>
+      <td>5.7%</td>
+      <td>725</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>시사</td>
+      <td>699</td>
+      <td>5.6%</td>
+      <td>702</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>랏코</td>
+      <td>597</td>
+      <td>4.8%</td>
+      <td>602</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>hachiware</td>
+      <td>356</td>
+      <td>2.8%</td>
+      <td>356</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>usagi</td>
+      <td>347</td>
+      <td>2.8%</td>
+      <td>348</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>루블리뷰티</td>
+      <td>268</td>
+      <td>2.1%</td>
+      <td>540</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>인어섬의비밀</td>
+      <td>221</td>
+      <td>1.8%</td>
+      <td>223</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>일상</td>
+      <td>199</td>
+      <td>1.6%</td>
+      <td>204</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>nagano</td>
+      <td>172</td>
+      <td>1.4%</td>
+      <td>172</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>우사기의아침시간</td>
+      <td>172</td>
+      <td>1.4%</td>
+      <td>172</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>치이카와마켓</td>
+      <td>171</td>
+      <td>1.4%</td>
+      <td>171</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>키덜트</td>
+      <td>166</td>
+      <td>1.3%</td>
+      <td>166</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>뉴스</td>
+      <td>163</td>
+      <td>1.3%</td>
+      <td>163</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>goods</td>
+      <td>151</td>
+      <td>1.2%</td>
+      <td>151</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>가챠</td>
+      <td>150</td>
+      <td>1.2%</td>
+      <td>159</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>chiikawagoods</td>
+      <td>148</td>
+      <td>1.2%</td>
+      <td>148</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>chiikawamarket</td>
+      <td>148</td>
+      <td>1.2%</td>
+      <td>148</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>먼작귀굿즈</td>
+      <td>147</td>
+      <td>1.2%</td>
+      <td>148</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>somethingsmallandcute</td>
+      <td>144</td>
+      <td>1.1%</td>
+      <td>145</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>momonga</td>
+      <td>142</td>
+      <td>1.1%</td>
+      <td>143</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>도쿄일상</td>
+      <td>142</td>
+      <td>1.1%</td>
+      <td>146</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>일러스트</td>
+      <td>136</td>
+      <td>1.1%</td>
+      <td>136</td>
+    </tr>
+  </tbody>
+</table>
+<h2>결측과 중복</h2><div class="grid2"><div><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>column</th>
+      <th>missing_count</th>
+      <th>missing_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체 게시물</td>
+      <td>post_id</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>description</td>
+      <td>138</td>
+      <td>1.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>media_type_id</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>post_url</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>created_at</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>like_count</td>
+      <td>2,164</td>
+      <td>16.1%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>comment_count</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>post_id</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>description</td>
+      <td>138</td>
+      <td>1.1%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>media_type_id</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>post_url</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>created_at</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>like_count</td>
+      <td>1,718</td>
+      <td>13.7%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>comment_count</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+  </tbody>
+</table></div><div><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>check</th>
+      <th>duplicate_count</th>
+      <th>duplicate_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체 게시물</td>
+      <td>완전 동일 행</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>post_id 추가 중복</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>post_url 추가 중복</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>description 추가 중복(결측 제외)</td>
+      <td>415</td>
+      <td>3.1%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>완전 동일 행</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>post_id 추가 중복</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>post_url 추가 중복</td>
+      <td>0</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>치이카와 필터</td>
+      <td>description 추가 중복(결측 제외)</td>
+      <td>227</td>
+      <td>1.8%</td>
+    </tr>
+  </tbody>
+</table></div></div>
+<h2>상위 반응 이상치</h2><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>post_id</th>
+      <th>created_at</th>
+      <th>media_type</th>
+      <th>like_count</th>
+      <th>comment_count</th>
+      <th>engagement_total</th>
+      <th>like_outlier</th>
+      <th>comment_outlier</th>
+      <th>post_url</th>
+      <th>description_preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18393706780128382</td>
+      <td>2025-03-18 12:59:12+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>222,028</td>
+      <td>541</td>
+      <td>222,569</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DHU5NsJpxCP/</td>
+      <td>💟루블리뷰티💟차력의거인🖤 거인에 진심인 울 고객님....✌️ 고객님 요청사항에 맞게 손톱위에 찐거인(?) 올려드렸어요✌️ 차력의거인에 진심을 담아 입체3D로 시술 완🫶🤣 멋진 후기까지 감사해요💗 🐰하린쌤시술 [#루블</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18115587971605981</td>
+      <td>2026-10-16 19:48:30+09:00</td>
+      <td>IMAGE</td>
+      <td>186,268</td>
+      <td>334</td>
+      <td>186,602</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DejWoZBC7sL/</td>
+      <td>🫪 #치이카와 #먼작귀 #ちいかわ #chiikawa 출처 : X</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18140814508570809</td>
+      <td>2026-09-02 03:17:40+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>178,163</td>
+      <td>671</td>
+      <td>178,834</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DcwSWstDYev/</td>
+      <td>Chiikawa as middle aged dads (throwback) #ちいかわ #吉伊卡哇 #치이카와 #fanart</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>17915212005422625</td>
+      <td>2026-07-20 23:56:38+09:00</td>
+      <td>IMAGE</td>
+      <td>174,769</td>
+      <td>202</td>
+      <td>174,971</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DbBNDdKpK7g/</td>
+      <td>이번 담곰이 신상 마코인가? #치이카와 #먼작귀 #ちいかわ #chiikawa</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18102215903479813</td>
+      <td>2026-04-26 13:29:03+09:00</td>
+      <td>IMAGE</td>
+      <td>168,691</td>
+      <td>169</td>
+      <td>168,860</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DXlNkvSES-P/</td>
+      <td>#치이카와 #먼작귀 #chiikawa #ちいかわ</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18228566683326364</td>
+      <td>2026-10-02 18:00:03+09:00</td>
+      <td>IMAGE</td>
+      <td>162,149</td>
+      <td>160</td>
+      <td>162,309</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/Dd2SuFxTCbU/</td>
+      <td>함께 공부하는 먼작귀들🩷 #치이카와 #공부 #study #withfriends #chiikawa</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>17907683313333693</td>
+      <td>2026-10-13 19:22:23+09:00</td>
+      <td>IMAGE</td>
+      <td>159,159</td>
+      <td>88</td>
+      <td>159,247</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeblTKgzfiV/</td>
+      <td>똥돼써.. #치이카와 #먼작귀 #우사기 #하치와레 #오타쿠</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18105923939262283</td>
+      <td>2026-09-27 15:00:03+09:00</td>
+      <td>IMAGE</td>
+      <td>155,319</td>
+      <td>131</td>
+      <td>155,450</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DdxI5IBT-Me/</td>
+      <td>잘못 가져다 주셨지만.. 당사자들끼리 잘 바꿨습니다👍 #치이카와 #랏코 #쿠리만쥬 #치이카와짤 #chiikawa</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18110543207137452</td>
+      <td>2026-10-08 03:33:14+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>134,041</td>
+      <td>165</td>
+      <td>134,206</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeNAwORkjqX/</td>
+      <td>최근 일본에서 치이카와 캐릭터들의 크기를 떠올리게 하는 사진이 화제가 되고 있습니다. 치이카와의 이름부터 말 그대로 '뭔가 작고 귀여운 녀석’ 이라는 뜻인데요. 작품을 보다 보면 주변 사물도 함께 작게 그려지는 경우</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>17879793882553455</td>
+      <td>2026-10-16 12:26:37+09:00</td>
+      <td>IMAGE</td>
+      <td>132,712</td>
+      <td>116</td>
+      <td>132,828</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeikHjqpJdd/</td>
+      <td>🐈💙 #먼작귀 #치이카와 #chiikawa #usagi #hachiware</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>17871314886634734</td>
+      <td>2026-08-28 21:21:06+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>126,862</td>
+      <td>149</td>
+      <td>127,011</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DclWXtOE0bC/</td>
+      <td>안전운전 지킴이 #우사기 #chiikawa #치이카와 #먼작귀</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18119825488918809</td>
+      <td>2026-08-30 18:01:28+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>117,404</td>
+      <td>364</td>
+      <td>117,768</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DcqJHM0iUSe/</td>
+      <td>2026. 08. 30. 정말 오랜만에 팬아트... 요즘은 밥 먹으면서 먼작귀도 같이 보는데 단점이라면 만화가 너무 빨리 끝나버린다는 것 난 밥 두 숟갈 밖에 안 먹었는데 #먼작귀 #치이카와 #chiikawa #fa</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18159190621503535</td>
+      <td>2026-10-14 09:59:50+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>117,444</td>
+      <td>233</td>
+      <td>117,677</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DedJxDVk9GU/</td>
+      <td>치이카와 최애 직장인 현재 상태 #치이카와 #치이카와굿즈 #먼작귀 #chiikawa #ちいかわ 하치와레 최애 직장인 현재 상태 우사기 최애 직장인 현재 상태 모몽가 최애 직장인 현재 상태 후루홍야 카니 최애 직장인</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18147419014488565</td>
+      <td>2026-09-27 08:36:17+09:00</td>
+      <td>IMAGE</td>
+      <td>113,327</td>
+      <td>351</td>
+      <td>113,678</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DdxOry-z8pZ/</td>
+      <td>일요일만 되면 망가지는 내 마음... 우사기적 사고방식으로 바꿔보자 @@우라 #우사기 #사고방식 #꿀팁 #정보 #일요일</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>17910112218481343</td>
+      <td>2026-10-11 17:16:37+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>109,637</td>
+      <td>192</td>
+      <td>109,829</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeWNXkko0er/</td>
+      <td>디자이너들은 모두 짭몽가st 사고방식을 가질 필요가 있다. (짭몽가는 얼른 몸을 돌려달라! 돌려달라!) *스포주의* 디개맨은 치이카와 극장판으로 먼작귀 친구들을 처음 접했구요.. 너무 무섭고.. 너무 무섭고… 여기까</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18097650743061302</td>
+      <td>2026-09-08 19:15:36+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>109,006</td>
+      <td>219</td>
+      <td>109,225</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DdBcwH1gb4B/</td>
+      <td>대충 그린 먼작귀 프사 캡처해서 사용하세용</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18098528039561493</td>
+      <td>2026-10-03 16:23:12+09:00</td>
+      <td>IMAGE</td>
+      <td>108,343</td>
+      <td>85</td>
+      <td>108,428</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeBgiAbB5dQ/</td>
+      <td>거짓말… #기니피그 #guineapig #밈 #먼작귀 *Original idea*</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18047257571647926</td>
+      <td>2025-09-02 23:30:14+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>108,044</td>
+      <td>130</td>
+      <td>108,174</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DOGm-drE_uI/</td>
+      <td>나도 저기 끼워줘💕 . . . #먼작귀#치이카와#우사기#가족#사진#힐링#귀여움</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18133763686710181</td>
+      <td>2026-09-25 21:34:54+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>106,199</td>
+      <td>491</td>
+      <td>106,690</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DdteNPfk8t3/</td>
+      <td>너의 대통령을 뽑아줘! #치이카와 #대통령 #우사기 #하치와레 #먼작귀</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18121586969472741</td>
+      <td>2026-10-11 13:15:41+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>102,969</td>
+      <td>583</td>
+      <td>103,552</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeVxy5REXaK/</td>
+      <td>너의 불행 걱정말라고! 우리 먼작귀들이 처리했으니! #치이카와 #chiikawa #치이카와덕질 #치이카와짤 #먼작귀</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18150405910480767</td>
+      <td>2026-10-19 17:52:55+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>102,310</td>
+      <td>280</td>
+      <td>102,590</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/Deq34bkGWuZ/</td>
+      <td>이정도면 진짜 먼작귀가 내는 소리 아닌가요? 💘 영화 예매율 1위를 기록 중인 애니메이션 &lt;극장판 치이카와: 인어 섬의 비밀&gt;! 덩달아 한국어 더빙에 참여한 성우들도 주목받고 있는데요. 치이카와, 가르마, 토끼 등</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18165573757415084</td>
+      <td>2026-09-15 18:37:33+09:00</td>
+      <td>IMAGE</td>
+      <td>98,043</td>
+      <td>366</td>
+      <td>98,409</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DdTZ9OVzfFw/</td>
+      <td>우사기 🐰 . . . #ちいかわ #ちいかわファンアート #치이카와 #우사기 #fanart</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18134994031636248</td>
+      <td>2026-10-12 15:12:52+09:00</td>
+      <td>IMAGE</td>
+      <td>92,357</td>
+      <td>179</td>
+      <td>92,536</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeYj7jxp4iB/</td>
+      <td>발 빠진 쥐. #chiikawa #ちいかわ #うさぎ #momonga #먼작귀</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18087477575486722</td>
+      <td>2025-12-17 18:51:11+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>87,403</td>
+      <td>128</td>
+      <td>87,531</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DSXDTXHD7lq/</td>
+      <td>수퍼 p의 자발적 가이드 선언...🇫🇷🥖 ⏰매주 수요일 오후 6시 30분 #카니 #카니를찾아서</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>17869427757642098</td>
+      <td>2026-09-22 22:34:31+09:00</td>
+      <td>IMAGE</td>
+      <td>86,963</td>
+      <td>223</td>
+      <td>87,186</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/Ddl2frhT5ky/</td>
+      <td>전에 만든 짤에 모몽가/우사기 신청이 올라와서 다급하게 만든 주인장…! 기존 짤에 글씨도 바꾸니까 새롭네요~ #우사기 #모몽가 #치이카와 #인스타툰 #치이카와밈</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18012988940764926</td>
+      <td>2026-10-12 11:18:13+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>86,263</td>
+      <td>904</td>
+      <td>87,167</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeYJJZpFNby/</td>
+      <td>돌아온 몸 (팬아트) #ちいかわファンアート #Chiikawa #먼작귀 #치이카와</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18396175675194460</td>
+      <td>2026-02-07 21:29:05+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>85,422</td>
+      <td>87</td>
+      <td>85,509</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DUdOtXrkq7R/</td>
+      <td>「呪術廻戦×ちいかわ」 伏黒甚爾が対五条悟に格納型呪霊から取り出したのはうさぎ…！？🐰 五条悟にそのままうさぎを投げ飛ばし、そのままクリーンヒット🔥 五条が気絶したのを確認すると伏黒家にうさぎを連れて帰る甚爾なのでした… #ちいかわ #ch</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18192890920401142</td>
+      <td>2026-10-13 11:38:58+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>82,145</td>
+      <td>848</td>
+      <td>82,993</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeawUMWEwJi/</td>
+      <td>더 이상 내가 알던 그 친구가 아니란 것을 알기에 (찐몽가와 데카츠요의 몸이 돌아온다면) #치이카와 #ちいかわ #chiikawa #먼작귀</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18086186417334985</td>
+      <td>2026-10-22 19:33:17+09:00</td>
+      <td>IMAGE</td>
+      <td>80,062</td>
+      <td>220</td>
+      <td>80,282</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/DeyxspStpqC/</td>
+      <td>영원할 건가 보다…..</td>
+    </tr>
+    <tr>
+      <td>전체 게시물</td>
+      <td>18076687514465266</td>
+      <td>2026-10-24 20:41:09+09:00</td>
+      <td>CAROUSEL_ALBUM</td>
+      <td>79,832</td>
+      <td>410</td>
+      <td>80,242</td>
+      <td>True</td>
+      <td>True</td>
+      <td>https://www.instagram.com/p/De4DG49kxfh/</td>
+      <td>치이카와 캐릭터의 귀염뽀짝한 어린시절 🍼 과거 ‘치이카와 베이비’ 팝업에서 공개된 아기 버전의 캐릭터들을 평소 모습과 나란히 모았습니다. 앙증맞은 턱받이와 짧은 팔다리, 이마 위에 꼬물꼬물 올라온 머리카락까지. 지금</td>
+    </tr>
+  </tbody>
+</table>
+<h2>재현 방법</h2><p>동봉한 <code>instagram_eda_analysis.py</code>에 원본 CSV 경로를 인수로 전달하면 동일한 CSV 요약표와 PNG 시각화를 다시 생성할 수 있습니다. 산출물의 <code>analysis_metadata.json</code>에는 입력 경로, 생성 시각과 핵심 수치가 기록되어 있습니다.</p>
+</div></body></html>
