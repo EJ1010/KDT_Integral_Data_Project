@@ -1,0 +1,2 @@
+﻿행수,고유_post_id,post_id_결측,중복_post_id수,중복_행수,final_class_값,final_class_결측,A_우선포함,account_id_결측,account_name_결측,created_UTC(Z),created_결측,created_파싱실패,collected_오프셋,collected_결측,duration_성공,duration_실패,view_음수,view_0,view_결측,like_음수,like_결측,comment_음수,comment_결측,경과_0이하,게시가_수집보다_늦음,수치변환_소수부_있는_조회수
+6462,6462,0,0,0,A_우선포함,0,6462,8,8,6454,8,0,6462,0,6462,0,0,0,8,0,489,0,341,0,0,0
