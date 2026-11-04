@@ -1,0 +1,34 @@
+table 한계
+	lineageTag: a1d1a7c4-992e-41c5-8a4b-b48d9339c200
+
+	column 항목
+		dataType: string
+		lineageTag: 1a373ee6-90fa-46fd-8ba6-a73bd9020269
+		summarizeBy: none
+		sourceColumn: 항목
+
+		annotation SummarizationSetBy = None
+
+	column 내용
+		dataType: string
+		lineageTag: 44f979aa-6ccd-44ff-ad91-815049ce941a
+		summarizeBy: none
+		sourceColumn: 내용
+
+		annotation SummarizationSetBy = None
+
+	partition 한계 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/한계.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"항목", "내용"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"항목", type text}, {"내용", type text}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+
+	annotation PBI_ResultType = Table
+

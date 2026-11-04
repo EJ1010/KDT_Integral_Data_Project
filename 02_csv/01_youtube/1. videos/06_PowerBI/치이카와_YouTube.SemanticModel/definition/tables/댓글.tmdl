@@ -1,0 +1,37 @@
+table 댓글
+	lineageTag: 46cadb0d-ee31-47ff-9d9b-658b599061dd
+
+	measure '수집 댓글 수' = DISTINCTCOUNT('댓글'[comment_id])
+		formatString: #,0
+		displayFolder: 댓글
+		lineageTag: 6ce12ca0-01e3-4fc9-9e6d-e09b77fc3596
+
+	column comment_id
+		dataType: string
+		lineageTag: 78401e3f-9628-4c38-b6ec-7cb2f9c75e6c
+		summarizeBy: none
+		sourceColumn: comment_id
+
+		annotation SummarizationSetBy = None
+
+	column post_id
+		dataType: string
+		lineageTag: b3ec10d0-812a-4fa7-9995-2b8084b24590
+		summarizeBy: none
+		sourceColumn: post_id
+
+		annotation SummarizationSetBy = None
+
+	partition 댓글 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/댓글.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"comment_id", "post_id"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"comment_id", type text}, {"post_id", type text}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

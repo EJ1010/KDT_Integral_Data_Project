@@ -1,0 +1,17 @@
+﻿source_type,title,url,published,accessed,use,language
+공식 애니메이션,ちいかわ キャラクター,https://www.anime-chiikawa.jp/chara.html,페이지 갱신일 미확인,2026-11-03,"주인공 소개 문장, 캐릭터 디자인 스태프는 사이트 표기 朝倉夕貴를 검색 요약으로 확인",ja
+공식 애니메이션 이미지,img_charapage.png,https://www.anime-chiikawa.jp/images/characters/img_charapage.png,파일 날짜 미확인,2026-11-03,정면 라인업 측정과 접촉표,ja
+공식 영어 소개,characters — chiikawaofficial,https://www.chiikawaofficial.com/characters,페이지 갱신일 미확인,2026-11-03,"종을 단정하지 않는 문장, 하치와레·우사기·모몽가·시사·고혼야",en
+공식 X,옆모습 그림 minnananikangaeteruno,https://x.com/ngnchiikawa/status/2096619094867062813,2026-09-07,2026-11-03,"Chrome에서 그림과 반응 수, 답글 1개 확인",ja
+기사,초!アニメディア 옆모습 기사,https://cho-animedia.jp/article/2026/09/07/62961.html,2026-09-07,2026-11-03,반응 인용은 기사 매개. 원문 게시물로 재확인하지 않음,ja
+기사,にじめん 옆모습 기사,https://nijimen.kusuguru.co.jp/topics/634448,2026-09-07,2026-11-03,공식 게시물 URL과 그림 하단 문장 확인,ja
+논문,Glocker et al. 2009 Baby schema,https://pmc.ncbi.nlm.nih.gov/articles/PMC3260535/,2009,2026-11-03,얼굴 아기 도식을 조작한 실험. 몸통은 조작하지 않았다고 본문에서 밝힘,en
+논문,Lorenz baby schema review,https://pmc.ncbi.nlm.nih.gov/articles/PMC11285920/,2024,2026-11-03,Lorenz 1943의 특징 목록을 이차 문헌으로 확인. 원문 1943은 이번 조사에서 열지 않음,en
+수집 데이터,x_posts.csv 5000,C:/DATA/KDT_Integral_Data_Project/02_csv/03_x/normalized/x_posts.csv,수집 2022-2026,2026-11-03,본문 전수에서 외형 어휘 후보를 다시 뽑음. 기존 라벨은 정답으로 쓰지 않음,ko
+검색,치이카와 옆모습 귀엽다,firecrawl web search,,2026-11-03,한국어 웹. 기존 표본의 옆모습 글과 기사·인스타 요약,ko
+검색,ちいかわ 横顔 かわいい,firecrawl web search,,2026-11-03,공식 옆모습 게시물로 이어지는 기사,ja
+검색,치이카와 짧은 팔다리,firecrawl web search,,2026-11-03,블로그·신문의 해설과 인스타 요약. 해설은 소비자 원문과 분리,ko
+검색,ちいかわ 手足 短い かわいい,firecrawl web search,,2026-11-03,짧은 팔과 둥글다는 게시물 요약 1건. 원문 화면 미확인,ja
+검색,하치와레 표정,firecrawl web search,,2026-11-03,표정 자체를 좋아하는 이유까지 적은 독립 장문은 확인하지 못함,ko
+검색,ちいかわ ぬいぐるみ 触り心地,firecrawl web search,,2026-11-03,공식·판매 문안의 크기와 촉감. 소비자 집계에 넣지 않음,ja
+도구 한계,XSearch,,,2026-11-03,이 계정에서 X 검색 도구가 사용할 수 없다고 반환,

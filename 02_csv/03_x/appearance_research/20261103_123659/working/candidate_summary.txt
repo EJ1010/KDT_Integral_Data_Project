@@ -1,0 +1,24 @@
+posts_total=5000
+posts_with_any_tight_feature=294
+feature_post_counts (a post can match several):
+  clothes	55
+  texture	46
+  tail_fur	46
+  expression	44
+  ears	27
+  bangs	24
+  roundness	14
+  worthless	10
+  negative_cute	9
+  cheek	7
+  eyes_specific	7
+  pose	5
+  limbs	4
+  color	4
+  head_body	3
+  side_profile	2
+  snout	2
+language_of_hit_posts:
+  ko_main	288
+  ko_ja_mixed	6
+posts_with_cute_word=801

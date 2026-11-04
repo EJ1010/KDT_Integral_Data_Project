@@ -1,0 +1,62 @@
+[
+  {
+    "check": "exclusive_purpose_sums_to_denom",
+    "ok": true,
+    "detail": "bad_periods=0"
+  },
+  {
+    "check": "post_id_unique",
+    "ok": true,
+    "detail": "5000"
+  },
+  {
+    "check": "no_time_mismatch",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "text_match",
+    "ok": true,
+    "detail": "5000"
+  },
+  {
+    "check": "view_na_2022",
+    "ok": true,
+    "detail": "기대 946"
+  },
+  {
+    "check": "view_present_2022",
+    "ok": true,
+    "detail": "기대 54"
+  },
+  {
+    "check": "view_na_later",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "barrier_action_zero",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "check": "review_excluded_from_confirmed",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "evidence_rows",
+    "ok": true,
+    "detail": "31"
+  },
+  {
+    "check": "charts_written",
+    "ok": true,
+    "detail": "n=13 small=[]"
+  },
+  {
+    "check": "no_missing_share_on_zero_label",
+    "ok": true,
+    "detail": "없는 달은 행을 만들지 않음"
+  }
+]

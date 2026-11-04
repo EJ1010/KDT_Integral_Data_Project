@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "p2",
+  "displayName": "2. 소재와 캐릭터",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F1EB'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "p2theme",
+      "target": "p2char",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p2theme",
+      "target": "p2eval",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p2char",
+      "target": "p2theme",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p2char",
+      "target": "p2eval",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p2eval",
+      "target": "p2theme",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p2eval",
+      "target": "p2char",
+      "type": "NoFilter"
+    }
+  ]
+}

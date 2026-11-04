@@ -1,0 +1,4 @@
+{"n": 4464, "pri": "G", "aux": "", "quote": "해 쥬세용", "why": "캐릭터를 해 달라는 말만 있고 상황극인지 본문이 정하지 않는다.", "rule": "CFG-G", "title_use": "예", "title_sug": "F", "review": "예", "review_why": "제목은 상황극이라 다음 영상 요청으로 읽힐 수 있다.", "hold": "아니오"}
+{"n": 4514, "pri": "G", "aux": "", "quote": "미니기계 해주세요", "why": "미니기계를 해 달라는 말만 있고 영상인지 매장인지 본문이 정하지 않는다.", "rule": "CFG-G", "title_use": "아니오", "title_sug": "", "review": "예", "review_why": "뽑기방 제목만으로 요청 종류를 정하지 않는다.", "hold": "아니오"}
+{"n": 4537, "pri": "G", "aux": "", "quote": "만들어 주세용", "why": "버전을 만들어 달라는 말뿐이라 스터디 영상인지 실물인지 본문이 정하지 않는다.", "rule": "CFG-G", "title_use": "예", "title_sug": "F", "review": "예", "review_why": "제목은 스터디 윗미다.", "hold": "아니오"}
+{"n": 4585, "pri": "D", "aux": "B|F", "quote": "만원에 팔아요", "why": "달력 판매 고지와 본인의 뽑기·구매 이야기가 둘 다 완결되어 핵심이 갈리지 않는다.", "rule": "BD-HOLD", "title_use": "아니오", "title_sug": "", "review": "예", "review_why": "판매 문장과 개인 소비 문장이 같이 있다.", "hold": "예"}

@@ -1,2 +1,22 @@
 # 이전 분석 보관. 현재 분석 결과가 아니다.
 02_csv/01_youtube/1. videos/05. 분석/90_보관/
+
+# Python 가상환경
+.venv/
+venv/
+
+# Python 캐시
+__pycache__/
+*.pyc
+
+# Jupyter 임시 파일
+.ipynb_checkpoints/
+
+# 환경변수 및 인증정보
+.env
+.env.*
+!.env.example
+
+# 로컬 백업 파일
+.gitignore.local
+.gitignore.local_backup

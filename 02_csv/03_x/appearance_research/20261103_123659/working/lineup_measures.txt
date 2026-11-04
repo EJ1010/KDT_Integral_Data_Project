@@ -1,0 +1,132 @@
+== 1 chiikawa px=323x359 content_bbox=323x359 w/h=0.900 mid_w/h=0.883 mid40_median_w/h=0.858
+  dark area=1537 relx=0.838 rely=0.620 box=94x295
+  dark area= 887 relx=0.347 rely=0.373 box=39x38
+  dark area= 873 relx=0.646 rely=0.373 box=40x38
+  dark area= 473 relx=0.064 rely=0.412 box=43x165
+  dark area= 383 relx=0.198 rely=0.782 box=41x68
+  dark area= 339 relx=0.497 rely=0.474 box=45x18
+  dark area= 281 relx=0.577 rely=0.932 box=94x21
+  dark area= 223 relx=0.715 rely=0.055 box=39x31
+  dark area= 120 relx=0.234 rely=0.060 box=17x34
+  dark area= 114 relx=0.340 rely=0.078 box=30x19
+== 2 hachiware px=326x370 content_bbox=326x370 w/h=0.881 mid_w/h=0.876 mid40_median_w/h=0.830
+  dark area=1916 relx=0.481 rely=0.237 box=279x81
+  dark area= 898 relx=0.343 rely=0.400 box=41x39
+  dark area= 894 relx=0.640 rely=0.401 box=40x40
+  dark area= 497 relx=0.497 rely=0.499 box=47x28
+  dark area= 389 relx=0.225 rely=0.827 box=77x97
+  dark area= 380 relx=0.274 rely=0.067 box=63x48
+  dark area= 291 relx=0.803 rely=0.803 box=46x72
+  dark area= 288 relx=0.062 rely=0.563 box=37x112
+  dark area= 223 relx=0.963 rely=0.423 box=16x99
+  dark area= 211 relx=0.555 rely=0.933 box=75x21
+== 3 usagi px=310x457 content_bbox=310x457 w/h=0.678 mid_w/h=0.674 mid40_median_w/h=0.617
+  dark area= 658 relx=0.923 rely=0.486 box=61x174
+  dark area= 560 relx=0.784 rely=0.828 box=67x82
+  dark area= 550 relx=0.639 rely=0.511 box=31x29
+  dark area= 544 relx=0.365 rely=0.513 box=31x30
+  dark area= 537 relx=0.223 rely=0.829 box=77x83
+  dark area= 483 relx=0.486 rely=0.192 box=28x109
+  dark area= 390 relx=0.496 rely=0.590 box=42x35
+  dark area= 369 relx=0.097 rely=0.419 box=70x119
+  dark area= 283 relx=0.476 rely=0.956 box=39x27
+  dark area= 251 relx=0.652 rely=0.199 box=13x98
+== 4 momonga px=406x388 content_bbox=406x388 w/h=1.046 mid_w/h=1.018 mid40_median_w/h=0.943
+  dark area=1186 relx=0.560 rely=0.467 box=55x39
+  dark area=1158 relx=0.283 rely=0.470 box=54x38
+  dark area= 685 relx=0.743 rely=0.730 box=44x52
+  dark area= 671 relx=0.185 rely=0.678 box=48x59
+  dark area= 502 relx=0.430 rely=0.557 box=42x34
+  dark area= 487 relx=0.749 rely=0.347 box=30x58
+  dark area= 436 relx=0.225 rely=0.152 box=32x62
+  dark area= 367 relx=0.617 rely=0.153 box=29x51
+  dark area= 303 relx=0.657 rely=0.846 box=46x53
+  dark area= 199 relx=0.922 rely=0.585 box=29x12
+== 5 kurimanju px=307x352 content_bbox=307x352 w/h=0.872 mid_w/h=0.855 mid40_median_w/h=0.821
+  dark area=1694 relx=0.250 rely=0.734 box=64x93
+  dark area=1485 relx=0.512 rely=0.204 box=234x68
+  dark area= 572 relx=0.761 rely=0.838 box=74x101
+  dark area= 393 relx=0.357 rely=0.419 box=26x23
+  dark area= 367 relx=0.623 rely=0.420 box=25x24
+  dark area= 299 relx=0.954 rely=0.473 box=24x106
+  dark area= 179 relx=0.497 rely=0.501 box=35x13
+  dark area= 149 relx=0.417 rely=0.944 box=45x22
+  dark area= 111 relx=0.069 rely=0.578 box=26x47
+  dark area=  77 relx=0.256 rely=0.672 box=21x4
+== 6 yoroi_pochette px=161x426 content_bbox=161x426 w/h=0.378 mid_w/h=0.371 mid40_median_w/h=0.364
+  dark area=2121 relx=0.461 rely=0.453 box=144x187
+  dark area= 582 relx=0.476 rely=0.126 box=72x12
+  dark area= 409 relx=0.474 rely=0.174 box=61x20
+  dark area= 302 relx=0.509 rely=0.586 box=34x52
+  dark area= 287 relx=0.491 rely=0.225 box=54x21
+  dark area= 163 relx=0.483 rely=0.040 box=65x21
+  dark area= 121 relx=0.764 rely=0.279 box=46x18
+  dark area=  95 relx=0.801 rely=0.341 box=11x36
+  dark area=  75 relx=0.329 rely=0.676 box=32x7
+  dark area=  74 relx=0.182 rely=0.342 box=11x29
+== 7 yoroi_2 px=162x425 content_bbox=162x425 w/h=0.381 mid_w/h=0.372 mid40_median_w/h=0.365
+  dark area=1087 relx=0.493 rely=0.537 box=141x88
+  dark area= 515 relx=0.472 rely=0.124 box=71x11
+  dark area= 366 relx=0.480 rely=0.173 box=60x20
+  dark area= 245 relx=0.506 rely=0.595 box=17x42
+  dark area= 172 relx=0.444 rely=0.219 box=51x15
+  dark area= 170 relx=0.480 rely=0.040 box=65x21
+  dark area= 157 relx=0.496 rely=0.401 box=65x8
+  dark area= 128 relx=0.196 rely=0.283 box=49x20
+  dark area= 127 relx=0.487 rely=0.426 box=66x3
+  dark area= 109 relx=0.760 rely=0.279 box=45x17
+== 8 yoroi_3 px=161x426 content_bbox=161x426 w/h=0.378 mid_w/h=0.371 mid40_median_w/h=0.362
+  dark area=1313 relx=0.496 rely=0.538 box=143x89
+  dark area= 824 relx=0.474 rely=0.126 box=74x16
+  dark area= 757 relx=0.493 rely=0.198 box=63x41
+  dark area= 415 relx=0.510 rely=0.583 box=40x54
+  dark area= 182 relx=0.487 rely=0.403 box=67x9
+  dark area= 180 relx=0.492 rely=0.429 box=66x4
+  dark area= 152 relx=0.763 rely=0.281 box=46x20
+  dark area= 147 relx=0.202 rely=0.285 box=47x21
+  dark area=  99 relx=0.185 rely=0.340 box=12x31
+  dark area=  97 relx=0.800 rely=0.340 box=11x33
+== 9 rakko px=337x360 content_bbox=337x360 w/h=0.936 mid_w/h=0.764 mid40_median_w/h=0.786
+  dark area=1719 relx=0.493 rely=0.697 box=261x35
+  dark area=1096 relx=0.541 rely=0.587 box=253x30
+  dark area= 704 relx=0.357 rely=0.290 box=56x48
+  dark area= 600 relx=0.399 rely=0.398 box=37x26
+  dark area= 588 relx=0.658 rely=0.394 box=38x26
+  dark area= 308 relx=0.530 rely=0.475 box=37x18
+  dark area= 207 relx=0.274 rely=0.642 box=53x19
+  dark area= 183 relx=0.807 rely=0.638 box=47x17
+  dark area= 149 relx=0.113 rely=0.410 box=21x21
+  dark area= 147 relx=0.125 rely=0.533 box=12x25
+== 10 shisa px=398x355 content_bbox=398x355 w/h=1.121 mid_w/h=0.949 mid40_median_w/h=0.986
+  dark area=2638 relx=0.845 rely=0.506 box=101x259
+  dark area=2578 relx=0.156 rely=0.385 box=71x239
+  dark area=1107 relx=0.624 rely=0.319 box=56x65
+  dark area=1068 relx=0.376 rely=0.320 box=57x64
+  dark area= 409 relx=0.254 rely=0.785 box=60x70
+  dark area= 214 relx=0.503 rely=0.461 box=39x15
+  dark area= 208 relx=0.696 rely=0.047 box=56x26
+  dark area= 161 relx=0.345 rely=0.079 box=29x25
+  dark area= 154 relx=0.275 rely=0.088 box=19x22
+  dark area= 120 relx=0.723 rely=0.085 box=20x16
+== 11 pajamas px=415x333 content_bbox=415x333 w/h=1.246 mid_w/h=1.210 mid40_median_w/h=1.207
+  dark area=3220 relx=0.524 rely=0.904 box=273x62
+  dark area=2596 relx=0.783 rely=0.573 box=124x139
+  dark area=2585 relx=0.510 rely=0.611 box=153x129
+  dark area=2365 relx=0.421 rely=0.473 box=170x156
+  dark area=1508 relx=0.142 rely=0.570 box=115x119
+  dark area=1353 relx=0.521 rely=0.201 box=146x84
+  dark area= 231 relx=0.708 rely=0.341 box=27x22
+  dark area= 208 relx=0.950 rely=0.467 box=23x22
+  dark area= 133 relx=0.331 rely=0.386 box=20x16
+  dark area= 129 relx=0.067 rely=0.723 box=34x38
+== 12 furuhonya px=303x409 content_bbox=303x409 w/h=0.741 mid_w/h=0.738 mid40_median_w/h=0.707
+  dark area=6583 relx=0.559 rely=0.256 box=289x270
+  dark area=1505 relx=0.344 rely=0.870 box=183x108
+  dark area= 855 relx=0.343 rely=0.449 box=37x37
+  dark area= 848 relx=0.503 rely=0.554 box=41x42
+  dark area= 835 relx=0.655 rely=0.449 box=36x36
+  dark area= 564 relx=0.778 rely=0.844 box=70x81
+  dark area= 101 relx=0.156 rely=0.521 box=12x22
+  dark area=  97 relx=0.658 rely=0.325 box=22x12
+  dark area=  96 relx=0.335 rely=0.327 box=21x11
+  dark area=  94 relx=0.202 rely=0.520 box=12x21

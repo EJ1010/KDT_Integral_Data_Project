@@ -1,0 +1,46 @@
+﻿label_key,axis_id,axis_name,label,sort_order,definition,keyword_rule
+consumption_behavior|관심·탐색,consumption_behavior,소비·소장 행동,관심·탐색,1,,갖고\s*싶|가지고\s*싶|원하|관심|구경|신상|찾아|찾다|기대|탐색|정보|찜|눈여겨
+consumption_behavior|구매·주문,consumption_behavior,소비·소장 행동,구매·주문,2,,구매|주문|샀|샀다|사다|결제|예약|선주문|구입|장바구니|지르|데려왔|데려오
+consumption_behavior|랜덤·교환,consumption_behavior,소비·소장 행동,랜덤·교환,3,,랜덤|교환|중복|양도|트레이드|뽑기|가챠|캡슐|블라인드|깡\b|언박싱
+consumption_behavior|기타·유형 미상,consumption_behavior,소비·소장 행동,기타·유형 미상,4,,굿즈·소장 범위에는 포함되지만 구체적 행동어가 없음
+consumption_behavior|희소성·재고,consumption_behavior,소비·소장 행동,희소성·재고,5,,한정|품절|재입고|오픈런|득템|재고|매진|마감|희귀|레어|선착순
+consumption_behavior|가격·품질 평가,consumption_behavior,소비·소장 행동,가격·품질 평가,6,,가격|비싸|저렴|할인|퀄리티|품질|불량|가성비|구성|마감|금액
+consumption_behavior|수집·소장,consumption_behavior,소비·소장 행동,수집·소장,7,,수집|소장|모으|컬렉션|컴플리트|전종|풀세트|진열|보관|소장용
+consumption_behavior|사용·착용·꾸미기,consumption_behavior,소비·소장 행동,사용·착용·꾸미기,8,,사용|쓰다|써보|착용|입다|입어|달다|달았|꾸미|장식|데코|붙이|착샷|실사용
+consumption_behavior|선물·증정,consumption_behavior,소비·소장 행동,선물·증정,9,,선물|증정|기념일|생일|나눔|경품
+consumption_behavior|재판매·중고,consumption_behavior,소비·소장 행동,재판매·중고,10,,리셀|중고|프리미엄|플미|되팔|재판매|양도\s*가|번개장터|당근
+goods_type|봉제·인형,goods_type,굿즈 유형,봉제·인형,1,,인형|봉제|마스코트|누이|플러시|ぬい|봉봉|솜인형
+goods_type|피규어·완구,goods_type,굿즈 유형,피규어·완구,2,,피규어|가챠|캡슐\s*토이|캡슐토이|미니어처|완구|장난감|소프비|토이|피규아
+goods_type|기타·유형 미상,goods_type,굿즈 유형,기타·유형 미상,3,,굿즈·소장 범위에는 포함되지만 구체적 상품어가 없음
+goods_type|키링·배지·아크릴,goods_type,굿즈 유형,키링·배지·아크릴,4,,키링|열쇠고리|배지|뱃지|아크릴|스탠드|아크릴\s*스탠드|아크스타|참\b
+goods_type|문구·지류,goods_type,굿즈 유형,문구·지류,5,,스티커|다이어리|메모지|엽서|노트|볼펜|펜\b|연필|마스킹\s*테이프|마테|포토카드|포카|문구|파일|클리어파일|카드
+goods_type|패션·액세서리,goods_type,굿즈 유형,패션·액세서리,6,,의류|옷|티셔츠|후드|맨투맨|양말|가방|파우치|모자|신발|슬리퍼|지갑|액세서리|주얼리|반지|목걸이|팔찌
+goods_type|식음료·소모품,goods_type,굿즈 유형,식음료·소모품,7,,과자|음료|캔디|사탕|빵|케이크|초콜릿|라면|도시락|식품|푸드|커피|화장품|향수|립밤|샴푸|비누|티슈
+goods_type|생활·홈,goods_type,굿즈 유형,생활·홈,8,,컵|텀블러|머그|접시|그릇|수건|타월|쿠션|침구|이불|담요|주방|식기|우산|거울|시계|케이스|휴지통|매트|조명
+goods_type|도서·디지털 콘텐츠,goods_type,굿즈 유형,도서·디지털 콘텐츠,9,,이모티콘|게임|배경화면|앱\b|블루레이|blu.?ray|dvd|앨범|도서|책\b|만화책|화보|콘텐츠
+project_category|굿즈·소장,project_category,프로젝트 평가영역,굿즈·소장,1,상품·수집·소장 관심,굿즈|인형|피규어|키링|스티커|가챠|랜덤|수집|소장|마스코트|플러시|문구
+project_category|시각적 매력,project_category,프로젝트 평가영역,시각적 매력,2,외형·표정·디자인 매력,귀엽|귀여|귀염|사랑스럽|예쁘|디자인|표정|비주얼
+project_category|구매·희소성,project_category,프로젝트 평가영역,구매·희소성,3,구매 행동과 희소성,구매|샀|사다|주문|예약|품절|재입고|한정|오픈런|득템|가격|판매|선주문
+project_category|스토리·세계관,project_category,프로젝트 평가영역,스토리·세계관,4,서사·관계·콘텐츠 확장,애니|만화|에피소드|세계관|스토리|관계|성우|극장판|시즌|작가
+project_category|오프라인 경험,project_category,프로젝트 평가영역,오프라인 경험,5,현장 체험과 유통 접점,팝업|스토어|매장|전시|방문|카페|편의점|백화점|축제|테마파크
+project_category|창작·커스터마이징,project_category,프로젝트 평가영역,창작·커스터마이징,6,2차 창작과 커스터마이징,네일|케이크|그림|일러스트|팬아트|뜨개|자수|수제|커스텀|만들|제작
+project_category|정서·공감,project_category,프로젝트 평가영역,정서·공감,7,정서 반응과 공감 표현,힐링|위로|공감|행복|감동|슬프|눈물|짠하|응원|사랑
+project_category|콜라보·확산,project_category,프로젝트 평가영역,콜라보·확산,8,브랜드 협업과 확산,콜라보|컬래버|협업|제휴|에디션|캠페인|이벤트|브랜드
+visual_element|귀여움·사랑스러움,visual_element,시각적 매력 요소,귀여움·사랑스러움,1,,귀엽|귀여|귀염|사랑스럽|깜찍|앙증|큐트|졸귀|존귀
+visual_element|크기·비율·실루엣,visual_element,시각적 매력 요소,크기·비율·실루엣,2,,작다|작은|작고|미니|크기|비율|통통|동글|둥글|쪼꼬미|쪼그만|왕큰|대형|빅사이즈
+visual_element|표정·얼굴,visual_element,시각적 매력 요소,표정·얼굴,3,,표정|얼굴|눈망울|눈\b|입\b|미소|웃는|웃고|울상|볼\b|볼따구|볼살|눈썹|입꼬리|얼굴형
+visual_element|형태·캐릭터 디자인,visual_element,시각적 매력 요소,형태·캐릭터 디자인,4,,디자인|외형|모양|실루엣|생김새|형태|스타일|조형|캐릭터\s*디자인
+visual_element|예쁨·미적 호감,visual_element,시각적 매력 요소,예쁨·미적 호감,5,,예쁘|이쁘|아름답|미모|비주얼|매력적|취향|반하|심쿵
+visual_element|디테일·완성도,visual_element,시각적 매력 요소,디테일·완성도,6,,디테일|퀄리티|질감|완성도|재현|봉제|마감|도색|정교|원작\s*재현
+visual_element|색감·배색,visual_element,시각적 매력 요소,색감·배색,7,,색감|컬러|색깔|파스텔|핑크|분홍|블루|파랑|노랑|옐로|톤\b|배색|색조
+visual_element|동작·포즈,visual_element,시각적 매력 요소,동작·포즈,8,,포즈|동작|움직|춤|뛰|걷|앉아|앉은|눕|누워|흔들|굴러|점프|제스처
+visual_element|기타·요소 미상,visual_element,시각적 매력 요소,기타·요소 미상,999,,시각적 매력 범위에는 포함되나 세부 요소어가 없음
+visual_reaction|상품화·굿즈 관심,visual_reaction,시각적 매력 반응,상품화·굿즈 관심,1,,굿즈|인형|피규어|키링|스티커|가챠|마스코트|상품|콜라보|문구|팝업
+visual_reaction|촬영·공유 욕구,visual_reaction,시각적 매력 반응,촬영·공유 욕구,2,,사진|촬영|인증샷|포토|공유|추천|태그|보여주|친구|셀카|카메라
+visual_reaction|호감·감탄,visual_reaction,시각적 매력 반응,호감·감탄,3,,좋다|좋아|최고|대박|미쳤|취향|반하|심쿵|사랑|매력|감탄|완벽
+visual_reaction|소유·구매 욕구,visual_reaction,시각적 매력 반응,소유·구매 욕구,4,,갖고\s*싶|가지고\s*싶|사고\s*싶|소장|구매|주문|결제|데려오|데려왔|욕심|지르
+visual_reaction|창작·커스터마이징,visual_reaction,시각적 매력 반응,창작·커스터마이징,5,,그림|팬아트|그리|만들|제작|커스텀|꾸미|데코|뜨개|자수|코스프레|일러스트
+visual_reaction|정서·힐링,visual_reaction,시각적 매력 반응,정서·힐링,6,,행복|힐링|기분\s*좋|웃음|위로|평화|마음|포근|따뜻|감동
+visual_reaction|기타·반응 미상,visual_reaction,시각적 매력 반응,기타·반응 미상,7,,시각적 매력 범위에는 포함되나 세부 반응어가 없음
+visual_reaction|비교·재현 평가,visual_reaction,시각적 매력 반응,비교·재현 평가,8,,닮다|닮았|비슷|원작|실물|퀄리티|재현|디테일|싱크로|그대로
+visual_reaction|강한 감정·과몰입,visual_reaction,시각적 매력 반응,강한 감정·과몰입,9,,울어|눈물|미치|죽겠|못\s*참|심장|소리\s*질|기절|오열|숨막|심쿵

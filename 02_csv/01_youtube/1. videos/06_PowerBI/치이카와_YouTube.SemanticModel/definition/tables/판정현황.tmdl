@@ -1,0 +1,111 @@
+table 판정현황
+	lineageTag: 00bd604a-7f34-4b3d-999f-43d927af4924
+
+	column 집계단위
+		dataType: string
+		lineageTag: 803a94cc-a5f8-41a2-bade-48bcdad8edb7
+		summarizeBy: none
+		sourceColumn: 집계단위
+
+		annotation SummarizationSetBy = None
+
+	column 평가대상
+		dataType: string
+		lineageTag: e4c88fae-3ac5-4300-9ea3-e51b78db761c
+		summarizeBy: none
+		sourceColumn: 평가대상
+
+		annotation SummarizationSetBy = None
+
+	column 수
+		dataType: int64
+		formatString: #,0
+		lineageTag: 30a3c03b-55a2-4bf9-a123-16e8922c2f0b
+		summarizeBy: none
+		sourceColumn: 수
+
+		annotation SummarizationSetBy = None
+
+	column 영상
+		dataType: int64
+		formatString: #,0
+		lineageTag: db635a7c-eee8-4440-9bbb-3fd61f188e60
+		summarizeBy: none
+		sourceColumn: 영상
+
+		annotation SummarizationSetBy = None
+
+	column 채널
+		dataType: int64
+		formatString: #,0
+		lineageTag: 428d0a17-8d0b-4e32-9f80-a7ff37768be8
+		summarizeBy: none
+		sourceColumn: 채널
+
+		annotation SummarizationSetBy = None
+
+	column 자료
+		dataType: string
+		lineageTag: 34c010e7-fe01-42b0-af0c-990cd50ddb68
+		summarizeBy: none
+		sourceColumn: 자료
+
+		annotation SummarizationSetBy = None
+
+	column 설명
+		dataType: string
+		lineageTag: 332635ee-9ac5-4ff9-bed6-cac6593a98f9
+		summarizeBy: none
+		sourceColumn: 설명
+
+		annotation SummarizationSetBy = None
+
+	column '직접 밝힌 이유'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 0e60459e-5b4f-451d-b0e1-ccfd9f4354c4
+		summarizeBy: none
+		sourceColumn: '직접 밝힌 이유'
+
+		annotation SummarizationSetBy = None
+
+	column '구체적 긍정 평가'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 7e44b4fa-5e44-4d20-8855-3421f980f460
+		summarizeBy: none
+		sourceColumn: '구체적 긍정 평가'
+
+		annotation SummarizationSetBy = None
+
+	column '포괄적 호감'
+		dataType: int64
+		formatString: #,0
+		lineageTag: b3e788bc-658b-40cc-b5b1-6abf96c34255
+		summarizeBy: none
+		sourceColumn: '포괄적 호감'
+
+		annotation SummarizationSetBy = None
+
+	column '호감 근거 없음'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 5acfd700-55d4-48f4-bff6-f1d2a858b7f1
+		summarizeBy: none
+		sourceColumn: '호감 근거 없음'
+
+		annotation SummarizationSetBy = None
+
+	partition 판정현황 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/판정현황_고정.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"집계단위", "평가대상", "수", "영상", "채널", "직접 밝힌 이유", "구체적 긍정 평가", "포괄적 호감", "호감 근거 없음", "자료", "설명"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"집계단위", type text}, {"평가대상", type text}, {"수", Int64.Type}, {"영상", Int64.Type}, {"채널", Int64.Type}, {"직접 밝힌 이유", Int64.Type}, {"구체적 긍정 평가", Int64.Type}, {"포괄적 호감", Int64.Type}, {"호감 근거 없음", Int64.Type}, {"자료", type text}, {"설명", type text}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

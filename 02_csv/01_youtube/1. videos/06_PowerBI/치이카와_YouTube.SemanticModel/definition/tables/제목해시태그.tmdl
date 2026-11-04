@@ -1,0 +1,151 @@
+table 제목해시태그
+	lineageTag: 22fb259b-1d7b-45fd-961e-9b5dac7534ef
+
+	measure '해시태그 출현 영상 수' = SUM('제목해시태그'[출현영상수])
+		formatString: #,0
+		displayFolder: 제목
+		lineageTag: f78c9136-aa89-42e4-b64f-03035760722d
+
+	column 키워드
+		dataType: string
+		lineageTag: ffb6d9e2-adb0-4e78-b320-90d8197fc896
+		summarizeBy: none
+		sourceColumn: 키워드
+
+		annotation SummarizationSetBy = None
+
+	column 종류
+		dataType: string
+		lineageTag: a52e8702-e4f2-446f-8054-b1ce302311a7
+		summarizeBy: none
+		sourceColumn: 종류
+
+		annotation SummarizationSetBy = None
+
+	column 위치
+		dataType: string
+		lineageTag: 27fdafa3-8e26-4127-ba84-0e5f7b6c3eed
+		summarizeBy: none
+		sourceColumn: 위치
+
+		annotation SummarizationSetBy = None
+
+	column 총출현횟수
+		dataType: int64
+		formatString: #,0
+		lineageTag: 36eea556-25bd-482b-a59f-82d1ddf8d6e8
+		summarizeBy: none
+		sourceColumn: 총출현횟수
+
+		annotation SummarizationSetBy = None
+
+	column 출현영상수
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1d255d03-38a1-449f-bb4c-9e1ccec1de8f
+		summarizeBy: none
+		sourceColumn: 출현영상수
+
+		annotation SummarizationSetBy = None
+
+	column 출현영상비율
+		dataType: double
+		formatString: 0.0%
+		lineageTag: c470e196-c923-4018-bcb2-c255a01e82e7
+		summarizeBy: none
+		sourceColumn: 출현영상비율
+
+		annotation SummarizationSetBy = None
+
+	column 출현채널수
+		dataType: int64
+		formatString: #,0
+		lineageTag: a3c82c5f-4bcf-40d3-9140-f375be7502f7
+		summarizeBy: none
+		sourceColumn: 출현채널수
+
+		annotation SummarizationSetBy = None
+
+	column 출현채널비율
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 48c1b8f4-7170-455f-b73f-1f531d72cbff
+		summarizeBy: none
+		sourceColumn: 출현채널비율
+
+		annotation SummarizationSetBy = None
+
+	column 분모_영상
+		dataType: int64
+		formatString: #,0
+		lineageTag: 58bcdebb-8e35-414d-ba63-681adfdd0cce
+		summarizeBy: none
+		sourceColumn: 분모_영상
+
+		annotation SummarizationSetBy = None
+
+	column 분모_채널
+		dataType: int64
+		formatString: #,0
+		lineageTag: 6a79a152-ad7b-44b7-aa0b-2673bf6dec02
+		summarizeBy: none
+		sourceColumn: 분모_채널
+
+		annotation SummarizationSetBy = None
+
+	column 주의
+		dataType: string
+		lineageTag: 05abb5ec-f7c3-4043-a189-de4f9720a2ba
+		summarizeBy: none
+		sourceColumn: 주의
+
+		annotation SummarizationSetBy = None
+
+	column 자료
+		dataType: string
+		lineageTag: 264868f8-61b6-4df5-b1e2-79222ee1c3f6
+		summarizeBy: none
+		sourceColumn: 자료
+
+		annotation SummarizationSetBy = None
+
+	column 분모_해시태그있는영상
+		dataType: int64
+		formatString: #,0
+		lineageTag: 17b99ee3-b1ae-4c61-b0de-1dc65470c663
+		summarizeBy: none
+		sourceColumn: 분모_해시태그있는영상
+
+		annotation SummarizationSetBy = None
+
+	column 출현영상비율_해시태그있는영상
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 7de60101-1bfa-47e0-b3cf-9d536e1454aa
+		summarizeBy: none
+		sourceColumn: 출현영상비율_해시태그있는영상
+
+		annotation SummarizationSetBy = None
+
+	column 정렬
+		dataType: int64
+		isHidden
+		lineageTag: df452f0b-5169-4b9d-954a-175d346df955
+		summarizeBy: none
+		sourceColumn: 정렬
+
+		annotation SummarizationSetBy = None
+
+	partition 제목해시태그 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/제목해시태그.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"키워드", "종류", "위치", "총출현횟수", "출현영상수", "출현영상비율", "출현채널수", "출현채널비율", "분모_영상", "분모_채널", "주의", "자료", "분모_해시태그있는영상", "출현영상비율_해시태그있는영상", "정렬"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"키워드", type text}, {"종류", type text}, {"위치", type text}, {"총출현횟수", Int64.Type}, {"출현영상수", Int64.Type}, {"출현영상비율", type number}, {"출현채널수", Int64.Type}, {"출현채널비율", type number}, {"분모_영상", Int64.Type}, {"분모_채널", Int64.Type}, {"주의", type text}, {"자료", type text}, {"분모_해시태그있는영상", Int64.Type}, {"출현영상비율_해시태그있는영상", type number}, {"정렬", Int64.Type}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

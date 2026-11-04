@@ -1,0 +1,333 @@
+table 연결
+	lineageTag: 2763df57-41b6-441a-afa5-535adbf8470f
+
+	measure '고유 댓글 수' = DISTINCTCOUNT('연결'[comment_id])
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: cf36727d-62d4-4c36-bf6c-7c661b9c6777
+
+	measure '연결 행 수' = COUNTROWS('연결')
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: c2c5303c-6d8c-4a8d-b884-c6b35845c157
+
+	measure '출현 영상 수' = DISTINCTCOUNT('연결'[post_id])
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: 67d61bf9-3e21-4e82-9f3c-4ee3164867d6
+
+	measure '출현 채널 수' = DISTINCTCOUNT('연결'[account_id])
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: 1c7e632e-7844-4a74-84b2-25da662700bb
+
+	measure '직접 이유 댓글 수' = CALCULATE([고유 댓글 수], '연결'[호감근거_수준] = "직접 밝힌 이유")
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: 21d0f83a-7245-4d19-82b3-3c433441d9c5
+
+	measure '구체적 긍정 댓글 수' = CALCULATE([고유 댓글 수], '연결'[호감근거_수준] = "구체적 긍정 평가")
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: 96b9ef02-333a-4f5b-918d-8af37c468098
+
+	measure '대상 안 비중' = ```
+				DIVIDE(
+				    [고유 댓글 수],
+				    CALCULATE([고유 댓글 수], REMOVEFILTERS('연결'[매력], '연결'[특징_범주], '연결'[구체적_특징]))
+				)
+			```
+		formatString: 0.0%
+		displayFolder: 연결
+		lineageTag: 183a7736-62e8-4f8d-9c14-cf7733ada248
+
+	measure 'AniBox 댓글 수' = CALCULATE([고유 댓글 수], '연결'[채널구분] = "AniBox")
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: 8741c3bc-90e5-4df6-a53b-d27bbffb8976
+
+	measure 'AniBox 외 댓글 수' = CALCULATE([고유 댓글 수], '연결'[채널구분] = "AniBox 외")
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: 2174a433-890e-409f-b873-4dbc1ca76fec
+
+	measure '결과 상태' = IF(ISBLANK([고유 댓글 수]), "이 조건에 해당하는 댓글이 없습니다", "수집·선별된 댓글에서 확인된 매력")
+		formatString: @
+		displayFolder: 연결
+		lineageTag: 9c611724-9375-4047-ab96-d5c41b607158
+
+	measure '한 범위 댓글 수' = IF(HASONEVALUE('연결'[표시대상]), [고유 댓글 수], BLANK())
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: db5883e6-6c3e-48eb-bc43-6feeca4ce6c4
+
+	measure '한 범위 영상 수' = IF(HASONEVALUE('연결'[표시대상]), [출현 영상 수], BLANK())
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: ddcce5f1-b38e-47aa-a7f7-7112bd30a77a
+
+	measure '한 범위 채널 수' = IF(HASONEVALUE('연결'[표시대상]), [출현 채널 수], BLANK())
+		formatString: #,0
+		displayFolder: 연결
+		lineageTag: 80479122-e64a-49e8-8dc7-461984fa3947
+
+	measure '대표 댓글 1' = ```
+				IF(
+				    NOT (HASONEVALUE('연결'[표시대상]) && HASONEVALUE('연결'[매력])),
+				    "캐릭터 또는 영역을 고르고, 매력 막대를 선택하세요",
+				    VAR body = CALCULATE(MAX('연결'[댓글발췌]), '연결'[카드순] = 1)
+				    VAR note = CALCULATE(MAX('연결'[매력]) & " · " & MAX('연결'[호감근거_수준]) & " · " & MAX('연결'[발췌표시]), '연결'[카드순] = 1)
+				    RETURN IF(ISBLANK(body), "이 순위에는 댓글이 없습니다", note & " | " & body)
+				)
+			```
+		formatString: @
+		displayFolder: 연결
+		lineageTag: d22aeb81-e17f-4340-bfb3-564e19531d67
+
+	measure '대표 댓글 2' = ```
+				IF(
+				    NOT (HASONEVALUE('연결'[표시대상]) && HASONEVALUE('연결'[매력])),
+				    "캐릭터 또는 영역을 고르고, 매력 막대를 선택하세요",
+				    VAR body = CALCULATE(MAX('연결'[댓글발췌]), '연결'[카드순] = 2)
+				    VAR note = CALCULATE(MAX('연결'[매력]) & " · " & MAX('연결'[호감근거_수준]) & " · " & MAX('연결'[발췌표시]), '연결'[카드순] = 2)
+				    RETURN IF(ISBLANK(body), "이 순위에는 댓글이 없습니다", note & " | " & body)
+				)
+			```
+		formatString: @
+		displayFolder: 연결
+		lineageTag: 380c3b4d-5f02-48f7-b015-265527e7c896
+
+	measure '대표 댓글 3' = ```
+				IF(
+				    NOT (HASONEVALUE('연결'[표시대상]) && HASONEVALUE('연결'[매력])),
+				    "캐릭터 또는 영역을 고르고, 매력 막대를 선택하세요",
+				    VAR body = CALCULATE(MAX('연결'[댓글발췌]), '연결'[카드순] = 3)
+				    VAR note = CALCULATE(MAX('연결'[매력]) & " · " & MAX('연결'[호감근거_수준]) & " · " & MAX('연결'[발췌표시]), '연결'[카드순] = 3)
+				    RETURN IF(ISBLANK(body), "이 순위에는 댓글이 없습니다", note & " | " & body)
+				)
+			```
+		formatString: @
+		displayFolder: 연결
+		lineageTag: bf67e1e0-014a-4600-8d51-0ddb56e64273
+
+	column 연결키
+		dataType: string
+		isHidden
+		lineageTag: 93ea437c-882c-4fc0-86d6-4e19809f49d3
+		summarizeBy: none
+		sourceColumn: 연결키
+
+		annotation SummarizationSetBy = None
+
+	column comment_id
+		dataType: string
+		lineageTag: 4c251ad5-7b2b-4708-b565-29ef6f481686
+		summarizeBy: none
+		sourceColumn: comment_id
+
+		annotation SummarizationSetBy = None
+
+	column post_id
+		dataType: string
+		lineageTag: 166f99a8-332e-45ec-b952-399f7f578806
+		summarizeBy: none
+		sourceColumn: post_id
+
+		annotation SummarizationSetBy = None
+
+	column account_id
+		dataType: string
+		lineageTag: b0c8d6f7-884e-4e58-8cea-af793371433a
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = None
+
+	column 채널구분
+		dataType: string
+		lineageTag: b38ba2d4-4d20-46ae-8974-cc8e903fd101
+		summarizeBy: none
+		sourceColumn: 채널구분
+
+		annotation SummarizationSetBy = None
+
+	column 평가대상
+		dataType: string
+		lineageTag: 9804beb5-440e-4522-b001-622c33d75947
+		summarizeBy: none
+		sourceColumn: 평가대상
+
+		annotation SummarizationSetBy = None
+
+	column 대상_상세
+		dataType: string
+		lineageTag: 64727a31-e730-459a-9985-80d9d7fe7d93
+		summarizeBy: none
+		sourceColumn: 대상_상세
+
+		annotation SummarizationSetBy = None
+
+	column 표시대상
+		dataType: string
+		lineageTag: b02cf537-a5a8-4db1-b27e-b1b4a25e9914
+		summarizeBy: none
+		sourceColumn: 표시대상
+
+		annotation SummarizationSetBy = None
+
+	column 평가_방향
+		dataType: string
+		lineageTag: 837b15f5-9348-4bec-9d4c-e09c22a80ab6
+		summarizeBy: none
+		sourceColumn: 평가_방향
+
+		annotation SummarizationSetBy = None
+
+	column 호감근거_수준
+		dataType: string
+		lineageTag: 36f35506-77b4-44fa-9766-c30658d8eb48
+		summarizeBy: none
+		sourceColumn: 호감근거_수준
+
+		annotation SummarizationSetBy = None
+
+	column 특징_범주
+		dataType: string
+		lineageTag: 699e0274-d00c-4eec-8ee2-12c3b83334ee
+		summarizeBy: none
+		sourceColumn: 특징_범주
+
+		annotation SummarizationSetBy = None
+
+	column 구체적_특징
+		dataType: string
+		lineageTag: 238ce2bd-deb1-4ecb-9f4b-e24e8fe08311
+		summarizeBy: none
+		sourceColumn: 구체적_특징
+
+		annotation SummarizationSetBy = None
+
+	column 매력
+		dataType: string
+		lineageTag: 260ce609-6366-4d2d-81f3-0b2fd65a0313
+		summarizeBy: none
+		sourceColumn: 매력
+
+		annotation SummarizationSetBy = None
+
+	column 매력집계
+		dataType: string
+		lineageTag: 6e22dc46-6835-4b21-9dd0-e4348a6010dc
+		summarizeBy: none
+		sourceColumn: 매력집계
+
+		annotation SummarizationSetBy = None
+
+	column 근거문구
+		dataType: string
+		lineageTag: 4ac04ccd-f9ab-40e7-bc7a-276f1bf01fde
+		summarizeBy: none
+		sourceColumn: 근거문구
+
+		annotation SummarizationSetBy = None
+
+	column 댓글발췌
+		dataType: string
+		lineageTag: 15c745cb-20e8-4ab0-beaf-551f4064974b
+		summarizeBy: none
+		sourceColumn: 댓글발췌
+
+		annotation SummarizationSetBy = None
+
+	column 영상제목
+		dataType: string
+		lineageTag: e796373c-709c-41e8-a0b9-9d8a13b52a94
+		summarizeBy: none
+		sourceColumn: 영상제목
+
+		annotation SummarizationSetBy = None
+
+	column 대표
+		dataType: int64
+		formatString: 0
+		lineageTag: d1af77cb-e36c-4aa7-b617-9f457faf1dbf
+		summarizeBy: none
+		sourceColumn: 대표
+
+		annotation SummarizationSetBy = None
+
+	column 비고
+		dataType: string
+		lineageTag: 181c3553-dfe1-4da3-8dda-7280e61ab76e
+		summarizeBy: none
+		sourceColumn: 비고
+
+		annotation SummarizationSetBy = None
+
+	column 보조_간접관심
+		dataType: string
+		lineageTag: cfeb1692-6ac7-4437-b13d-9f4021268da3
+		summarizeBy: none
+		sourceColumn: 보조_간접관심
+
+		annotation SummarizationSetBy = None
+
+	column 발췌표시
+		dataType: string
+		lineageTag: 901667e5-ef2b-4843-850f-583d9e528e7d
+		summarizeBy: none
+		sourceColumn: 발췌표시
+
+		annotation SummarizationSetBy = None
+
+	column 댓글원문
+		dataType: string
+		lineageTag: 17e984f7-541d-41fd-9dcd-65f2776ab399
+		summarizeBy: none
+		sourceColumn: 댓글원문
+
+		annotation SummarizationSetBy = None
+
+	column 본문우선
+		dataType: string
+		lineageTag: 8d65e23c-47f3-4a5c-be83-5d33bcbdf1f9
+		summarizeBy: none
+		sourceColumn: 본문우선
+
+		annotation SummarizationSetBy = None
+
+	column 댓글대표행
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 27d17e1a-0663-42dc-a853-a1a9a298b52b
+		summarizeBy: none
+		sourceColumn: 댓글대표행
+
+		annotation SummarizationSetBy = None
+
+	column 카드순
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a21c776c-8ccc-448c-914c-d510d16a2e01
+		summarizeBy: none
+		sourceColumn: 카드순
+
+		annotation SummarizationSetBy = None
+
+	partition 연결 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/연결.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"연결키", "comment_id", "post_id", "account_id", "채널구분", "평가대상", "대상_상세", "표시대상", "평가_방향", "호감근거_수준", "특징_범주", "구체적_특징", "매력", "매력집계", "근거문구", "댓글발췌", "발췌표시", "댓글원문", "영상제목", "대표", "비고", "보조_간접관심", "본문우선", "댓글대표행", "카드순"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"연결키", type text}, {"comment_id", type text}, {"post_id", type text}, {"account_id", type text}, {"채널구분", type text}, {"평가대상", type text}, {"대상_상세", type text}, {"표시대상", type text}, {"평가_방향", type text}, {"호감근거_수준", type text}, {"특징_범주", type text}, {"구체적_특징", type text}, {"매력", type text}, {"매력집계", type text}, {"근거문구", type text}, {"댓글발췌", type text}, {"발췌표시", type text}, {"댓글원문", type text}, {"영상제목", type text}, {"대표", Int64.Type}, {"비고", type text}, {"보조_간접관심", type text}, {"본문우선", type text}, {"댓글대표행", Int64.Type}, {"카드순", Int64.Type}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+
+	annotation PBI_ResultType = Table
+

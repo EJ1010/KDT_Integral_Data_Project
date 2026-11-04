@@ -1,0 +1,10 @@
+{"n": 942, "pri": "G", "aux": "", "quote": "되나요?", "why": "그 음식들이 되는지만 묻고 만들어 달라는 말이 본문에 없다.", "rule": "CFG-G", "title_use": "예", "title_sug": "C", "review": "예", "review_why": "제목은 음식을 만들어 주는 영상이라 같은 제작 요청으로 읽힐 수 있다.", "hold": "아니오"}
+{"n": 1023, "pri": "C", "aux": "", "quote": "아이디어도 퀄리티도 편집도", "why": "아이디어와 퀄리티, 편집을 평가한다. 사람 자체 칭찬이 없어 보조 E를 뺀다.", "rule": "CEG-NOE", "title_use": "아니오", "title_sug": "", "review": "아니오", "review_why": "", "hold": "아니오"}
+{"n": 1067, "pri": "C", "aux": "", "quote": "손재주도 너무 좋으시고", "why": "조각과 손재주가 본문에 있다. 사람에게 말했다는 이유의 보조 E는 뺀다.", "rule": "CEG-NOE", "title_use": "아니오", "title_sug": "", "review": "아니오", "review_why": "", "hold": "아니오"}
+{"n": 1073, "pri": "C", "aux": "", "quote": "100개 만들어주세요", "why": "치이카와를 여러 개 만들어 달라는 제작 요청이 본문에 있다.", "rule": "CFG-C", "title_use": "아니오", "title_sug": "", "review": "아니오", "review_why": "", "hold": "아니오"}
+{"n": 1137, "pri": "C", "aux": "B", "quote": "직접 그린 썸네일", "why": "직접 그린 썸네일 평가가 중심이고 다시 가고 싶다는 말은 보조 B다.", "rule": "CEG-C", "title_use": "아니오", "title_sug": "", "review": "아니오", "review_why": "", "hold": "아니오"}
+{"n": 1209, "pri": "G", "aux": "", "quote": "언제 해줍니깡", "why": "해 달라는 말만 있고 도무송인지 본문이 말하지 않는다.", "rule": "CFG-G", "title_use": "예", "title_sug": "C", "review": "예", "review_why": "제목은 다음 도무송 대상이다.", "hold": "아니오"}
+{"n": 1290, "pri": "D", "aux": "", "quote": "포카 포장해주세요", "why": "포카 포장이 판매 주문인지 꾸미기 요청인지 본문만으로 갈리지 않는다.", "rule": "CFG-HOLD", "title_use": "아니오", "title_sug": "", "review": "예", "review_why": "포장샵 영상 아래의 포장 요청이다.", "hold": "예"}
+{"n": 1520, "pri": "G", "aux": "", "quote": "제 프사요", "why": "프로필 사진을 부탁할 뿐 무엇을 해 달라는지 본문이 정하지 않는다.", "rule": "CFG-G", "title_use": "아니오", "title_sug": "", "review": "예", "review_why": "퀴즈 제목만으로 요청 종류를 정하지 않는다.", "hold": "아니오"}
+{"n": 1631, "pri": "C", "aux": "", "quote": "라이노 정말 잘하시네요", "why": "라이노를 다루는 솜씨와 배우는 방법을 말한다. 사람 자체 칭찬이 중심이 아니다.", "rule": "CEG-C", "title_use": "아니오", "title_sug": "", "review": "아니오", "review_why": "", "hold": "아니오"}
+{"n": 1674, "pri": "B", "aux": "", "quote": "교환할수있나요", "why": "키링 교환이 되는지를 묻는 개인 질문이다.", "rule": "BD-Q", "title_use": "아니오", "title_sug": "", "review": "아니오", "review_why": "", "hold": "아니오"}

@@ -1,0 +1,2 @@
+﻿use_mode,temporal,unique_posts,evidence_rows,unique_accounts,denominator_posts,denominator_label,row_overlap,count_unit
+특정 캐릭터의 여러 상품·버전 모으기,경험,4,5,4,5000,전체 게시물,한 게시물이 여러 칸에 들어갈 수 있음. 칸 합은 게시물 총계가 아님,고유 post_id / 근거 행

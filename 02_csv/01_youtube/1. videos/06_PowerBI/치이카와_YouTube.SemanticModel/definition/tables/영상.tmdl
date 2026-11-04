@@ -1,0 +1,169 @@
+table 영상
+	lineageTag: 49e2a2bd-c522-40c9-8427-1fb394512a76
+
+	measure '영상 수' = DISTINCTCOUNT('영상'[post_id])
+		formatString: #,0
+		displayFolder: 영상
+		lineageTag: 15e588b3-3bf8-4db6-b4c1-82fa7c383de4
+
+	measure '채널 수' = ```
+				CALCULATE(
+				    DISTINCTCOUNT('영상'[account_id]),
+				    '영상'[account_id] <> ""
+				)
+			```
+		formatString: #,0
+		displayFolder: 영상
+		lineageTag: f7a98d31-645a-4411-b64d-78269814a329
+
+	measure '관측 누적조회수' = SUM('영상'[조회수])
+		formatString: #,0
+		displayFolder: 영상
+		lineageTag: 34245f48-2781-428c-9a11-5ca3f7a12df8
+
+	measure '조회수 중앙값' = MEDIAN('영상'[조회수])
+		formatString: #,0
+		displayFolder: 영상
+		lineageTag: e1c82d19-04ca-4d47-a3f5-26b8202b0a16
+
+	measure '조회수 유효 영상 수' = COUNT('영상'[조회수])
+		formatString: #,0
+		displayFolder: 영상
+		lineageTag: af5d24aa-c731-4de1-8bd9-e98ce049d903
+
+	measure '길이 비중' = ```
+				DIVIDE(
+				    [영상 수],
+				    CALCULATE([영상 수], REMOVEFILTERS('영상'[길이구간], '영상'[길이순서]))
+				)
+			```
+		formatString: 0.0%
+		displayFolder: 영상
+		lineageTag: 879da370-dd76-43dd-adc2-9557fa4ab2cd
+
+	measure '조회수 표시' = ```
+				FORMAT(
+				    DIVIDE([관측 누적조회수], 100000000),
+				    "0.00"
+				) & "억 회"
+			```
+		formatString: @
+		displayFolder: 영상
+		lineageTag: bb1672f1-75e5-4863-b9aa-97f1527a5f8b
+
+	column post_id
+		dataType: string
+		lineageTag: 198f6c19-f5ff-4887-a283-955fea27f528
+		summarizeBy: none
+		sourceColumn: post_id
+
+		annotation SummarizationSetBy = None
+
+	column account_id
+		dataType: string
+		lineageTag: f2049fad-a23d-4c32-8159-9221c61ad4cb
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = None
+
+	column 채널명
+		dataType: string
+		lineageTag: 1dc6026d-47e7-4b7a-8b3f-cf87d075ce09
+		summarizeBy: none
+		sourceColumn: 채널명
+
+		annotation SummarizationSetBy = None
+
+	column 채널구분
+		dataType: string
+		lineageTag: fbff28e3-2d7f-4129-a79d-b8e7b283fa70
+		summarizeBy: none
+		sourceColumn: 채널구분
+
+		annotation SummarizationSetBy = None
+
+	column 영상제목
+		dataType: string
+		lineageTag: 7e0e1367-11d6-481e-bf84-a5151198863b
+		summarizeBy: none
+		sourceColumn: 영상제목
+
+		annotation SummarizationSetBy = None
+
+	column 게시연도
+		dataType: string
+		lineageTag: e1ae6f08-8338-4605-9a69-1da5f613a82a
+		summarizeBy: none
+		sourceColumn: 게시연도
+		sortByColumn: 연도순서
+
+		annotation SummarizationSetBy = None
+
+	column 연도순서
+		dataType: int64
+		isHidden
+		lineageTag: 89667511-7094-4d71-a372-7c928809e203
+		summarizeBy: none
+		sourceColumn: 연도순서
+
+		annotation SummarizationSetBy = None
+
+	column 게시월
+		dataType: string
+		lineageTag: 6df59e90-8019-49ac-b83e-565b5a792fa9
+		summarizeBy: none
+		sourceColumn: 게시월
+		sortByColumn: 게시월순서
+
+		annotation SummarizationSetBy = None
+
+	column 게시월순서
+		dataType: int64
+		isHidden
+		lineageTag: 67510fb1-5925-451d-bf74-70117efce34b
+		summarizeBy: none
+		sourceColumn: 게시월순서
+
+		annotation SummarizationSetBy = None
+
+	column 길이구간
+		dataType: string
+		lineageTag: 367b374b-561a-44e9-bfe2-bcf5aa1c0699
+		summarizeBy: none
+		sourceColumn: 길이구간
+		sortByColumn: 길이순서
+
+		annotation SummarizationSetBy = None
+
+	column 길이순서
+		dataType: int64
+		isHidden
+		lineageTag: 13171c38-a51e-4d91-8268-4c96bee92a1c
+		summarizeBy: none
+		sourceColumn: 길이순서
+
+		annotation SummarizationSetBy = None
+
+	column 조회수
+		dataType: int64
+		formatString: #,0
+		lineageTag: d0143a48-39c8-436f-974f-5b67fc6dcb6b
+		summarizeBy: none
+		sourceColumn: 조회수
+
+		annotation SummarizationSetBy = None
+
+	partition 영상 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/영상.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"post_id", "account_id", "채널명", "채널구분", "영상제목", "게시연도", "연도순서", "게시월", "게시월순서", "길이구간", "길이순서", "조회수"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"post_id", type text}, {"account_id", type text}, {"채널명", type text}, {"채널구분", type text}, {"영상제목", type text}, {"게시연도", type text}, {"연도순서", Int64.Type}, {"게시월", type text}, {"게시월순서", Int64.Type}, {"길이구간", type text}, {"길이순서", Int64.Type}, {"조회수", Int64.Type}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

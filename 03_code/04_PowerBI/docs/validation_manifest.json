@@ -1,0 +1,17 @@
+{
+  "fact_posts": 12534,
+  "analysis_included_posts": 7795,
+  "dim_keyword_unique": true,
+  "dim_label_unique": true,
+  "bridge_post_keyword_duplicate_keys": 0,
+  "bridge_post_label_duplicate_keys": 0,
+  "orphan_keyword_posts": 0,
+  "orphan_label_posts": 0,
+  "csv_file_count": 11,
+  "exact_duplicate_groups_found_in_prior_set": [
+    [
+      "C:\\Users\\user\\Documents\\Codex\\2026-11-03\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\keyword_cooccurrence_clean.csv",
+      "C:\\Users\\user\\Documents\\Codex\\2026-11-03\\referenced-chatgpt-conversation-this-is-an-2\\outputs\\powerbi\\fact_keyword_pairs.csv"
+    ]
+  ]
+}

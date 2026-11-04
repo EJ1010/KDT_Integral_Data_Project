@@ -1,0 +1,133 @@
+table 댓글평가
+	lineageTag: 24238c88-ed9f-433e-8370-cebb900048b8
+
+	measure '평가 언급 댓글 수' = SUM('댓글평가'[언급댓글수])
+		formatString: #,0
+		displayFolder: 댓글평가
+		lineageTag: 7fea2742-835e-4e17-9ea8-a3cf0628b2e2
+
+	column 키워드
+		dataType: string
+		lineageTag: 01824341-65dc-4c9b-bd5d-05e7cad1ec51
+		summarizeBy: none
+		sourceColumn: 키워드
+
+		annotation SummarizationSetBy = None
+
+	column 종류
+		dataType: string
+		lineageTag: f5812173-8554-4e61-b809-f01b36d8a818
+		summarizeBy: none
+		sourceColumn: 종류
+
+		annotation SummarizationSetBy = None
+
+	column 언급댓글수
+		dataType: int64
+		formatString: #,0
+		lineageTag: 586fd537-2006-4d2c-b300-336212db4f66
+		summarizeBy: none
+		sourceColumn: 언급댓글수
+
+		annotation SummarizationSetBy = None
+
+	column 언급댓글비율
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 02c6630c-df2a-4a91-870a-e56358b1ed8b
+		summarizeBy: none
+		sourceColumn: 언급댓글비율
+
+		annotation SummarizationSetBy = None
+
+	column 출현영상수
+		dataType: int64
+		formatString: #,0
+		lineageTag: 2d0589e0-8d52-48ea-83bd-10e7df60bddf
+		summarizeBy: none
+		sourceColumn: 출현영상수
+
+		annotation SummarizationSetBy = None
+
+	column 출현채널수
+		dataType: int64
+		formatString: #,0
+		lineageTag: 38dabb3e-e767-4f23-ad6e-bd1a76048bd8
+		summarizeBy: none
+		sourceColumn: 출현채널수
+
+		annotation SummarizationSetBy = None
+
+	column 분모_댓글
+		dataType: int64
+		formatString: #,0
+		lineageTag: 17bcca9c-6204-4f7c-8873-9ac25782e239
+		summarizeBy: none
+		sourceColumn: 분모_댓글
+
+		annotation SummarizationSetBy = None
+
+	column 분모_영상
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4a7f6d23-cc43-4460-89c1-7529091c7934
+		summarizeBy: none
+		sourceColumn: 분모_영상
+
+		annotation SummarizationSetBy = None
+
+	column 분모_채널
+		dataType: int64
+		formatString: #,0
+		lineageTag: b2f95ca7-1918-436e-9ccb-706780a5e4ce
+		summarizeBy: none
+		sourceColumn: 분모_채널
+
+		annotation SummarizationSetBy = None
+
+	column 주의
+		dataType: string
+		lineageTag: d5c2018e-4613-434c-bfca-54652d60d4d5
+		summarizeBy: none
+		sourceColumn: 주의
+
+		annotation SummarizationSetBy = None
+
+	column 자료
+		dataType: string
+		lineageTag: 9db1c518-6631-40c6-81f5-1f53a24f9a98
+		summarizeBy: none
+		sourceColumn: 자료
+
+		annotation SummarizationSetBy = None
+
+	column 분모설명
+		dataType: string
+		lineageTag: bab008c5-6b24-491d-a7bc-129ddb1564e8
+		summarizeBy: none
+		sourceColumn: 분모설명
+
+		annotation SummarizationSetBy = None
+
+	column 정렬
+		dataType: int64
+		isHidden
+		lineageTag: 1750d67c-6325-47a7-8d37-f791557434a6
+		summarizeBy: none
+		sourceColumn: 정렬
+
+		annotation SummarizationSetBy = None
+
+	partition 댓글평가 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/댓글평가.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"키워드", "종류", "언급댓글수", "언급댓글비율", "출현영상수", "출현채널수", "분모_댓글", "분모_영상", "분모_채널", "주의", "자료", "분모설명", "정렬"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"키워드", type text}, {"종류", type text}, {"언급댓글수", Int64.Type}, {"언급댓글비율", type number}, {"출현영상수", Int64.Type}, {"출현채널수", Int64.Type}, {"분모_댓글", Int64.Type}, {"분모_영상", Int64.Type}, {"분모_채널", Int64.Type}, {"주의", type text}, {"자료", type text}, {"분모설명", type text}, {"정렬", Int64.Type}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

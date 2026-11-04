@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="24" y="28" font-size="16" font-weight="700">가설1 작성자 지지 게시물, 세부면</text>
+<text x="24" y="402" font-size="12" fill="#444">작성자 지지 148게시물 기준. 한 글이 여러 면에 들어가 합이 더 클 수 있다. 최다 계정 @vvvewww 25게시물.</text>
+<line x1="180" y1="330.0" x2="880" y2="330.0" stroke="#e5e5e5"/>
+<text x="172" y="334.0" font-size="11" text-anchor="end" fill="#555">0</text>
+<line x1="180" y1="236.7" x2="880" y2="236.7" stroke="#e5e5e5"/>
+<text x="172" y="240.7" font-size="11" text-anchor="end" fill="#555">27</text>
+<line x1="180" y1="143.3" x2="880" y2="143.3" stroke="#e5e5e5"/>
+<text x="172" y="147.3" font-size="11" text-anchor="end" fill="#555">54</text>
+<line x1="180" y1="50.0" x2="880" y2="50.0" stroke="#e5e5e5"/>
+<text x="172" y="54.0" font-size="11" text-anchor="end" fill="#555">81</text>
+<rect x="201.9" y="50.0" width="35.0" height="280.0" fill="#1d4e89"/>
+<text x="219.4" y="46.0" font-size="11" text-anchor="middle">81</text>
+<text x="223.8" y="348" font-size="12" text-anchor="middle">성격·말투</text>
+<rect x="289.4" y="257.4" width="35.0" height="72.6" fill="#1d4e89"/>
+<text x="306.9" y="253.4" font-size="11" text-anchor="middle">21</text>
+<text x="311.2" y="348" font-size="12" text-anchor="middle">관계·우정</text>
+<rect x="376.9" y="274.7" width="35.0" height="55.3" fill="#1d4e89"/>
+<text x="394.4" y="270.7" font-size="11" text-anchor="middle">16</text>
+<text x="398.8" y="348" font-size="12" text-anchor="middle">사연·노력·일상</text>
+<rect x="464.4" y="292.0" width="35.0" height="38.0" fill="#1d4e89"/>
+<text x="481.9" y="288.0" font-size="11" text-anchor="middle">11</text>
+<text x="486.2" y="348" font-size="12" text-anchor="middle">이야기 후 증가</text>
+<rect x="551.9" y="302.3" width="35.0" height="27.7" fill="#1d4e89"/>
+<text x="569.4" y="298.3" font-size="11" text-anchor="middle">8</text>
+<text x="573.8" y="348" font-size="12" text-anchor="middle">어두운·불편한 </text>
+<rect x="639.4" y="305.8" width="35.0" height="24.2" fill="#1d4e89"/>
+<text x="656.9" y="301.8" font-size="11" text-anchor="middle">7</text>
+<text x="661.2" y="348" font-size="12" text-anchor="middle">세계관</text>
+<rect x="726.9" y="312.7" width="35.0" height="17.3" fill="#1d4e89"/>
+<text x="744.4" y="308.7" font-size="11" text-anchor="middle">5</text>
+<text x="748.8" y="348" font-size="12" text-anchor="middle">다음 이야기 기</text>
+<rect x="814.4" y="312.7" width="35.0" height="17.3" fill="#1d4e89"/>
+<text x="831.9" y="308.7" font-size="11" text-anchor="middle">5</text>
+<text x="836.2" y="348" font-size="12" text-anchor="middle">서사 긍정 평가</text>
+<rect x="180" y="372" width="12" height="12" fill="#1d4e89"/>
+<text x="196" y="382" font-size="12">게시물</text>
+</svg>

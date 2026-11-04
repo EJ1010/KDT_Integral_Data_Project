@@ -1,0 +1,29 @@
+model Model
+	culture: ko-KR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: ko-KR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["영상", "댓글", "문맥", "연결", "영역", "제목소재", "제목표기", "제목해시태그", "댓글언급", "댓글평가", "판정현황", "발견가설", "한계", "안내"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 영상
+ref table 댓글
+ref table 문맥
+ref table 연결
+ref table 제목소재
+ref table 제목표기
+ref table 제목해시태그
+ref table 댓글언급
+ref table 댓글평가
+ref table 판정현황
+ref table 발견가설
+ref table 안내
+ref table 영역
+ref table 한계
+

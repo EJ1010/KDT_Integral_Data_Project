@@ -1,0 +1,26 @@
+{
+  "run_id": "20261103_143555",
+  "updated_at": "2026-11-03T14:54:12+09:00",
+  "posts": 5000,
+  "screen_candidates": 1999,
+  "evidence_rows": 3051,
+  "evidence_posts": 1660,
+  "model_read_posts": 20,
+  "overrides": 12,
+  "image_checks": 5,
+  "source_year_mismatch": 0,
+  "validation": [
+    "게시물 5,000 고유 post_id 확인",
+    "근거 게시물 누락 0",
+    "원문에 없는 인용 0",
+    "근거 행 3051 고유 게시물 1660",
+    "created_at 연도와 source_year 불일치 0"
+  ],
+  "charts": [
+    "C:\\DATA\\KDT_Integral_Data_Project\\02_csv\\03_x\\consumption_analysis\\20261103_143555\\charts\\01_form_by_speaker.png",
+    "C:\\DATA\\KDT_Integral_Data_Project\\02_csv\\03_x\\consumption_analysis\\20261103_143555\\charts\\02_form_x_use_experience.png",
+    "C:\\DATA\\KDT_Integral_Data_Project\\02_csv\\03_x\\consumption_analysis\\20261103_143555\\charts\\03_use_by_temporal.png",
+    "C:\\DATA\\KDT_Integral_Data_Project\\02_csv\\03_x\\consumption_analysis\\20261103_143555\\charts\\04_explicit_reasons.png"
+  ],
+  "resume": "같은 스크립트를 다시 실행하면 결과를 덮어 쓴다. model_read_ids.txt, overrides.jsonl, image_checks.csv 가 있으면 반영한다."
+}

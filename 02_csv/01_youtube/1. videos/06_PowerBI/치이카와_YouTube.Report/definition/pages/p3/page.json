@@ -1,0 +1,336 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "p3",
+  "displayName": "3. 캐릭터 매력",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "p3inc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "연결"
+              }
+            },
+            "Property": "매력집계"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "연",
+              "Entity": "연결",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "연"
+                              }
+                            },
+                            "Property": "매력집계"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'포함'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "p3who",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "연결"
+              }
+            },
+            "Property": "평가대상"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "연결",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "평가대상"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'특정 캐릭터'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "p3show",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "연결"
+              }
+            },
+            "Property": "본문우선"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "연",
+              "Entity": "연결",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "연"
+                          }
+                        },
+                        "Property": "본문우선"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'본문'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'상세'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F1EB'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "p3bar",
+      "target": "p3c1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p3bar",
+      "target": "p3c2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p3bar",
+      "target": "p3c3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p3bar",
+      "target": "p3n",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p3bar",
+      "target": "p3v",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p3bar",
+      "target": "p3h",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p3bar",
+      "target": "p3char",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3c1",
+      "target": "p3bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3c1",
+      "target": "p3char",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3c2",
+      "target": "p3bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3c2",
+      "target": "p3char",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3c3",
+      "target": "p3bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3c3",
+      "target": "p3char",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3n",
+      "target": "p3bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3n",
+      "target": "p3char",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3v",
+      "target": "p3bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3v",
+      "target": "p3char",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3h",
+      "target": "p3bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p3h",
+      "target": "p3char",
+      "type": "NoFilter"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+﻿from_table,from_column,to_table,to_column,cardinality,filter_guidance
+dim_date,date,fact_posts,post_date,1:N,단방향
+fact_posts,post_id,bridge_post_keyword,post_id,1:N,양방향 또는 DAX TREATAS
+dim_keyword,keyword,bridge_post_keyword,keyword,1:N,단방향
+fact_posts,post_id,bridge_post_label,post_id,1:N,양방향 또는 DAX TREATAS
+dim_label,label_key,bridge_post_label,label_key,1:N,단방향

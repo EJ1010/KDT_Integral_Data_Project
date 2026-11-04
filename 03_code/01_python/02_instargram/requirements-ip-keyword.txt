@@ -1,0 +1,5 @@
+pandas>=2.0
+kiwipiepy>=0.18
+matplotlib>=3.8
+seaborn>=0.13
+networkx>=3.2
