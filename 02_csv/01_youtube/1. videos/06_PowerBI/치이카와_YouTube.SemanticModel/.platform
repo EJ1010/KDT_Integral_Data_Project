@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "치이카와 YouTube"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c5e3e1b9-0d8b-4663-ad0d-81d4eb31a2de"
+  }
+}

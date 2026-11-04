@@ -1,0 +1,116 @@
+table 댓글언급
+	lineageTag: 67a52b1c-5c60-4819-be08-f12e0f6583cd
+
+	measure '언급 댓글 수' = SUM('댓글언급'[한국어혼합])
+		formatString: #,0
+		displayFolder: 댓글언급
+		lineageTag: d4c12ab7-496e-4027-afcf-6f022795b4fd
+
+	column 캐릭터
+		dataType: string
+		lineageTag: 79ffd1b8-a237-4d74-afab-276f0f9b2216
+		summarizeBy: none
+		sourceColumn: 캐릭터
+
+		annotation SummarizationSetBy = None
+
+	column 종류
+		dataType: string
+		lineageTag: 8515c77c-ba88-4f4c-b38b-84fc8459963e
+		summarizeBy: none
+		sourceColumn: 종류
+
+		annotation SummarizationSetBy = None
+
+	column 한국어혼합
+		dataType: int64
+		formatString: #,0
+		lineageTag: 87604661-9ea8-48b0-ab8d-3fd9c9a6dde8
+		summarizeBy: none
+		sourceColumn: 한국어혼합
+
+		annotation SummarizationSetBy = None
+
+	column 영상
+		dataType: int64
+		formatString: #,0
+		lineageTag: 082e9777-17f6-49e3-8149-39e335f9bd76
+		summarizeBy: none
+		sourceColumn: 영상
+
+		annotation SummarizationSetBy = None
+
+	column 채널
+		dataType: int64
+		formatString: #,0
+		lineageTag: c8636759-fb67-487e-b080-0f2c322660dd
+		summarizeBy: none
+		sourceColumn: 채널
+
+		annotation SummarizationSetBy = None
+
+	column 개인_또는_캐릭터
+		dataType: int64
+		formatString: #,0
+		lineageTag: eef67219-26be-4e18-930c-fdc85da13ff7
+		summarizeBy: none
+		sourceColumn: 개인_또는_캐릭터
+
+		annotation SummarizationSetBy = None
+
+	column 작품캐릭터불명확
+		dataType: int64
+		formatString: #,0
+		lineageTag: 5742a42d-4ec7-441a-83c4-8dc3bcf238fa
+		summarizeBy: none
+		sourceColumn: 작품캐릭터불명확
+
+		annotation SummarizationSetBy = None
+
+	column 판단불가_이름만
+		dataType: int64
+		formatString: #,0
+		lineageTag: cc3278e9-5916-4201-ae6f-d35ad8d75857
+		summarizeBy: none
+		sourceColumn: 판단불가_이름만
+
+		annotation SummarizationSetBy = None
+
+	column 외국어_언급
+		dataType: int64
+		formatString: #,0
+		lineageTag: 27199bfe-67cf-4a7c-997b-e3b40156d5a9
+		summarizeBy: none
+		sourceColumn: 외국어_언급
+
+		annotation SummarizationSetBy = None
+
+	column 자료
+		dataType: string
+		lineageTag: 3c699a88-a792-44e8-9f88-2065dac56d0d
+		summarizeBy: none
+		sourceColumn: 자료
+
+		annotation SummarizationSetBy = None
+
+	column 분모설명
+		dataType: string
+		lineageTag: dede3449-b928-423c-ab1a-0db89a4d3d9b
+		summarizeBy: none
+		sourceColumn: 분모설명
+
+		annotation SummarizationSetBy = None
+
+	partition 댓글언급 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/댓글언급.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"캐릭터", "종류", "한국어혼합", "영상", "채널", "개인_또는_캐릭터", "작품캐릭터불명확", "판단불가_이름만", "외국어_언급", "자료", "분모설명"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"캐릭터", type text}, {"종류", type text}, {"한국어혼합", Int64.Type}, {"영상", Int64.Type}, {"채널", Int64.Type}, {"개인_또는_캐릭터", Int64.Type}, {"작품캐릭터불명확", Int64.Type}, {"판단불가_이름만", Int64.Type}, {"외국어_언급", Int64.Type}, {"자료", type text}, {"분모설명", type text}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

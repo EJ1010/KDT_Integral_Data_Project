@@ -1,0 +1,67 @@
+table 발견가설
+	lineageTag: 87fb59b4-e24c-4e60-980e-458772186e65
+
+	column 순번
+		dataType: int64
+		formatString: 0
+		lineageTag: 592a743a-f83e-4b58-a8a8-17380c067ddc
+		summarizeBy: none
+		sourceColumn: 순번
+
+		annotation SummarizationSetBy = None
+
+	column 구분
+		dataType: string
+		lineageTag: f86d6ffe-d0d9-49db-bc89-23f5597f7b36
+		summarizeBy: none
+		sourceColumn: 구분
+
+		annotation SummarizationSetBy = None
+
+	column 자료
+		dataType: string
+		lineageTag: 3cf3efeb-3dfc-42a8-90b4-dc9de6434be6
+		summarizeBy: none
+		sourceColumn: 자료
+
+		annotation SummarizationSetBy = None
+
+	column 화면
+		dataType: string
+		lineageTag: fa8beb73-a8c7-4ee2-8b14-f1d52bae2217
+		summarizeBy: none
+		sourceColumn: 화면
+
+		annotation SummarizationSetBy = None
+
+	column 짧은문장
+		dataType: string
+		lineageTag: 9a7b5f43-6034-465d-a4c9-c3be7c944786
+		summarizeBy: none
+		sourceColumn: 짧은문장
+
+		annotation SummarizationSetBy = None
+
+	column 상세문장
+		dataType: string
+		lineageTag: c03c43c4-1af9-49f8-91b0-48c51c478d7c
+		summarizeBy: none
+		sourceColumn: 상세문장
+
+		annotation SummarizationSetBy = None
+
+	partition 발견가설 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/발견가설.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"순번", "구분", "화면", "짧은문장", "상세문장", "자료"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"순번", Int64.Type}, {"구분", type text}, {"화면", type text}, {"짧은문장", type text}, {"상세문장", type text}, {"자료", type text}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+
+	annotation PBI_ResultType = Table
+

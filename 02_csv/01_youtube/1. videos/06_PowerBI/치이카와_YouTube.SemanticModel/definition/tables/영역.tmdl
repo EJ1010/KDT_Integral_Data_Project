@@ -1,0 +1,45 @@
+table 영역
+	lineageTag: 6d968ea4-c29d-4cba-a974-d59fb88d8b20
+
+	column 영역명
+		dataType: string
+		lineageTag: 3f4472a4-7849-429f-b67a-e88a57945582
+		summarizeBy: none
+		sourceColumn: 영역명
+
+		annotation SummarizationSetBy = None
+
+	column 짧은이름
+		dataType: string
+		lineageTag: bc0e8117-4f18-43bc-897e-15169385e0a3
+		summarizeBy: none
+		sourceColumn: 짧은이름
+		sortByColumn: 정렬
+
+		annotation SummarizationSetBy = None
+
+	column 정렬
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: db44116e-aa16-4bcd-82dc-6555a03b1d6d
+		summarizeBy: none
+		sourceColumn: 정렬
+
+		annotation SummarizationSetBy = None
+
+	partition 영역 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/영역.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"영역명", "짧은이름", "정렬"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"영역명", type text}, {"짧은이름", type text}, {"정렬", Int64.Type}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+
+	annotation PBI_ResultType = Table
+

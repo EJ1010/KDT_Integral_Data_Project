@@ -1,0 +1,128 @@
+table 제목표기
+	lineageTag: 4f255637-87de-40b1-bde2-b559c6dac484
+
+	column 키워드
+		dataType: string
+		lineageTag: ec7f0888-c876-4aea-bbde-283bf02e6ff0
+		summarizeBy: none
+		sourceColumn: 키워드
+
+		annotation SummarizationSetBy = None
+
+	column 종류
+		dataType: string
+		lineageTag: d60d74a6-b291-4245-a591-5339c62ae887
+		summarizeBy: none
+		sourceColumn: 종류
+
+		annotation SummarizationSetBy = None
+
+	column 위치
+		dataType: string
+		lineageTag: aa5b99a0-025c-41d0-abf8-b5fcc147780e
+		summarizeBy: none
+		sourceColumn: 위치
+
+		annotation SummarizationSetBy = None
+
+	column 총출현횟수
+		dataType: int64
+		formatString: #,0
+		lineageTag: f8a5f5a6-21ed-4fe5-9c3b-f76770ecb0c9
+		summarizeBy: none
+		sourceColumn: 총출현횟수
+
+		annotation SummarizationSetBy = None
+
+	column 출현영상수
+		dataType: int64
+		formatString: #,0
+		lineageTag: 6c1ba50e-a7d3-4aca-af00-2150bd1bed8e
+		summarizeBy: none
+		sourceColumn: 출현영상수
+
+		annotation SummarizationSetBy = None
+
+	column 출현영상비율
+		dataType: double
+		formatString: 0.0%
+		lineageTag: d9be16f9-aed8-4865-98cf-f719ac676be2
+		summarizeBy: none
+		sourceColumn: 출현영상비율
+
+		annotation SummarizationSetBy = None
+
+	column 출현채널수
+		dataType: int64
+		formatString: #,0
+		lineageTag: b22a8367-0a00-4adb-ac23-b512001eb05f
+		summarizeBy: none
+		sourceColumn: 출현채널수
+
+		annotation SummarizationSetBy = None
+
+	column 출현채널비율
+		dataType: double
+		formatString: 0.0%
+		lineageTag: f1c4eadc-73e9-45ef-b736-6fa476070239
+		summarizeBy: none
+		sourceColumn: 출현채널비율
+
+		annotation SummarizationSetBy = None
+
+	column 분모_영상
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4cb91e49-f748-4b52-94f8-07cb6fc616cc
+		summarizeBy: none
+		sourceColumn: 분모_영상
+
+		annotation SummarizationSetBy = None
+
+	column 분모_채널
+		dataType: int64
+		formatString: #,0
+		lineageTag: 8a17e936-228e-4434-8dc8-aaecb7787a92
+		summarizeBy: none
+		sourceColumn: 분모_채널
+
+		annotation SummarizationSetBy = None
+
+	column 주의
+		dataType: string
+		lineageTag: e0ea0b7d-212a-401c-afbb-af345852e414
+		summarizeBy: none
+		sourceColumn: 주의
+
+		annotation SummarizationSetBy = None
+
+	column 자료
+		dataType: string
+		lineageTag: 1384f237-f025-49e3-b985-e7fabdc96822
+		summarizeBy: none
+		sourceColumn: 자료
+
+		annotation SummarizationSetBy = None
+
+	column 정렬
+		dataType: int64
+		isHidden
+		lineageTag: 458f9f03-a4d2-4860-8955-6f83a0d85320
+		summarizeBy: none
+		sourceColumn: 정렬
+
+		annotation SummarizationSetBy = None
+
+	partition 제목표기 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/제목표기.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"키워드", "종류", "위치", "총출현횟수", "출현영상수", "출현영상비율", "출현채널수", "출현채널비율", "분모_영상", "분모_채널", "주의", "자료", "정렬"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"키워드", type text}, {"종류", type text}, {"위치", type text}, {"총출현횟수", Int64.Type}, {"출현영상수", Int64.Type}, {"출현영상비율", type number}, {"출현채널수", Int64.Type}, {"출현채널비율", type number}, {"분모_영상", Int64.Type}, {"분모_채널", Int64.Type}, {"주의", type text}, {"자료", type text}, {"정렬", Int64.Type}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

@@ -1,0 +1,241 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "p4",
+  "displayName": "4. 작품과 소비",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F4F1EB'"
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "displayArea": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "p4inc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "연결"
+              }
+            },
+            "Property": "매력집계"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "연결",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "매력집계"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'포함'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "p4show",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "연결"
+              }
+            },
+            "Property": "본문우선"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "s",
+              "Entity": "연결",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "s"
+                          }
+                        },
+                        "Property": "본문우선"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'본문'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "p4bar",
+      "target": "p4c1",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p4bar",
+      "target": "p4c2",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p4bar",
+      "target": "p4c3",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p4bar",
+      "target": "p4n",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p4bar",
+      "target": "p4v",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p4bar",
+      "target": "p4h",
+      "type": "DataFilter"
+    },
+    {
+      "source": "p4bar",
+      "target": "p4area",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4bar",
+      "target": "p4note",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4c1",
+      "target": "p4bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4c1",
+      "target": "p4area",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4c2",
+      "target": "p4bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4c2",
+      "target": "p4area",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4c3",
+      "target": "p4bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4c3",
+      "target": "p4area",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4note",
+      "target": "p4bar",
+      "type": "NoFilter"
+    },
+    {
+      "source": "p4note",
+      "target": "p4area",
+      "type": "NoFilter"
+    }
+  ]
+}

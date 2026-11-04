@@ -1,0 +1,70 @@
+table 문맥
+	lineageTag: 3c7db7b7-77d4-476f-986f-fa2edd757423
+
+	measure '문맥 판정 댓글 수' = DISTINCTCOUNT('문맥'[comment_id])
+		formatString: #,0
+		displayFolder: 문맥
+		lineageTag: 9e29299b-a41e-474f-aef2-9b93826044f6
+
+	column comment_id
+		dataType: string
+		lineageTag: 6fe4b893-0818-4457-abea-82243b5c1d56
+		summarizeBy: none
+		sourceColumn: comment_id
+
+		annotation SummarizationSetBy = None
+
+	column post_id
+		dataType: string
+		lineageTag: 1d1f0214-5c82-429e-b144-e9c86921d358
+		summarizeBy: none
+		sourceColumn: post_id
+
+		annotation SummarizationSetBy = None
+
+	column 순번
+		dataType: int64
+		formatString: 0
+		lineageTag: e927e136-3450-4510-91fb-ca18e8d43558
+		summarizeBy: none
+		sourceColumn: 순번
+
+		annotation SummarizationSetBy = None
+
+	column 대표근거
+		dataType: string
+		lineageTag: 34b0b907-cce1-4031-9c06-4fb5218ba5f0
+		summarizeBy: none
+		sourceColumn: 대표근거
+
+		annotation SummarizationSetBy = None
+
+	column 대표대상
+		dataType: string
+		lineageTag: 54b5ea54-8918-455a-94df-71e76656370e
+		summarizeBy: none
+		sourceColumn: 대표대상
+
+		annotation SummarizationSetBy = None
+
+	column 프롬프트
+		dataType: string
+		lineageTag: b0198930-3b95-47c0-ad82-712eb037dc65
+		summarizeBy: none
+		sourceColumn: 프롬프트
+
+		annotation SummarizationSetBy = None
+
+	partition 문맥 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/문맥.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"comment_id", "post_id", "순번", "대표근거", "대표대상", "프롬프트"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"comment_id", type text}, {"post_id", type text}, {"순번", Int64.Type}, {"대표근거", type text}, {"대표대상", type text}, {"프롬프트", type text}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

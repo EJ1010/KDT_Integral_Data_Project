@@ -1,0 +1,12 @@
+{"n":246,"pri":"C","aux":"","quote":"손재주","why":"손재주와 꾸밀 공간을 만들고 싶다는 말이 본문에 있어 제작 기술 평가다.","rule":"CEG-C","title_use":"아니오","title_sug":"","review":"아니오","review_why":"","hold":"아니오"}
+{"n":437,"pri":"G","aux":"","quote":"금손이세요","why":"금손만 있고 무엇을 평가하는지 본문이 특정하지 않는다. 말투만으로 C로 두지 않는다.","rule":"CEG-G","title_use":"예","title_sug":"C","review":"예","review_why":"제목은 테이프 말랑이 만들기라 제작 평가로 읽힐 수 있으나 본문 근거는 아니다.","hold":"아니오"}
+{"n":1604,"pri":"B","aux":"","quote":"판매하실 생각","why":"판매 가능 여부를 묻는 개인 질문이다.","rule":"BD-Q","title_use":"아니오","title_sug":"","review":"아니오","review_why":"","hold":"아니오"}
+{"n":1708,"pri":"C","aux":"","quote":"잘그리세요","why":"잘 그린다는 말과 도안 요청이 본문에 있다. 사람에게 말했다는 이유의 보조 E는 두지 않는다.","rule":"CEG-NOE","title_use":"아니오","title_sug":"","review":"아니오","review_why":"","hold":"아니오"}
+{"n":1711,"pri":"D","aux":"","quote":"교환쥼","why":"교환해 달라는 상대 모집이 핵심이다. 가능 여부를 묻는 질문이 아니다.","rule":"BD-R","title_use":"아니오","title_sug":"","review":"아니오","review_why":"","hold":"아니오"}
+{"n":2170,"pri":"B","aux":"D","quote":"이벤트 참여합니다","why":"미니소와 태닝키티 평가가 그 자체로 성립하고 이벤트 참여가 같이 있다. 금손은 대상이 없어 보조로 올리지 않는다.","rule":"BD-BD","title_use":"아니오","title_sug":"","review":"아니오","review_why":"","hold":"아니오"}
+{"n":2329,"pri":"G","aux":"","quote":"금손이다","why":"금손 단독이라 제작물인지 사람인지 본문으로 특정할 수 없다.","rule":"CEG-G","title_use":"아니오","title_sug":"","review":"예","review_why":"쿠지 제목으로 뽑기 실력인지 제작인지 정하지 않는다.","hold":"아니오"}
+{"n":2776,"pri":"B","aux":"A","quote":"맞구 가능","why":"맞교환이 되는지를 묻는 개인 질문이다. 치이카와가 귀엽다는 말은 보조 A다.","rule":"BD-Q","title_use":"아니오","title_sug":"","review":"아니오","review_why":"","hold":"아니오"}
+{"n":3225,"pri":"G","aux":"","quote":"개잘하신다","why":"잘한다는 말만 있고 평가 대상이 본문에 없다.","rule":"CEG-G","title_use":"예","title_sug":"C","review":"예","review_why":"제목은 성대모사라 팬 연기 평가로 읽힐 수 있으나 본문 근거는 아니다.","hold":"아니오"}
+{"n":3960,"pri":"G","aux":"","quote":"어머니랑 생일","why":"본문은 어머니 생일이고 작품 대상이 없다.","rule":"BODY-G","title_use":"예","title_sug":"A","review":"예","review_why":"제목이 치이카와 생일이라 작품 감상으로 읽힐 수 있다.","hold":"아니오"}
+{"n":4112,"pri":"C","aux":"","quote":"손재주가 좋으시네요","why":"손재주가 본문에 있어 제작 기술 평가다.","rule":"CEG-C","title_use":"아니오","title_sug":"","review":"아니오","review_why":"","hold":"아니오"}
+{"n":4409,"pri":"G","aux":"","quote":"레몬탱 해주세용","why":"무엇을 해 달라는지 본문만으로 알 수 없다. 만들기 동사가 없다는 이유만으로 F로 두지 않는다.","rule":"CFG-G","title_use":"아니오","title_sug":"","review":"예","review_why":"댄스 제목만으로 제작 요청인지 영상 요청인지 정하지 않는다.","hold":"아니오"}

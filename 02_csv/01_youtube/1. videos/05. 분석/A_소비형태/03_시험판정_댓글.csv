@@ -1,0 +1,85 @@
+﻿표본번호,comment_id,post_id,account_id,층,유효소비,무효사유,관계수,판정방법,판정버전,표본구분
+1,UgwsPW9aJmwUt5eQ-9J4AaABAg,Sy8C9KPuZwE,UCq3Tc3K8g-8IsA5Fgf7wOBA,가챠랜덤,예,,2,에이전트 읽기,consume-llm-v1,시험
+2,UgzoB3duSeUCNzycCWd4AaABAg,fb57XgHoVJA,UC0QDroTajD4HMilIqGziT9A,가챠랜덤,예,,1,에이전트 읽기,consume-llm-v1,시험
+3,UgzsCxSCbXn5KWYr-C54AaABAg,6AZISr4lThU,UC0QDroTajD4HMilIqGziT9A,가챠랜덤,예,,3,에이전트 읽기,consume-llm-v1,시험
+4,Ugy9F1iLDl6Qu_XEWml4AaABAg,JyB6EfI1xz8,UCNueDILNrtHm3PLzD439zvg,가챠랜덤,아니오,가챠가 팬카페 이름에만 있다,0,에이전트 읽기,consume-llm-v1,시험
+5,UgyZBQF_myMUcwxzC2h4AaABAg,cUP8x4qxEfM,UC0QDroTajD4HMilIqGziT9A,가챠랜덤,아니오,랜덤깡을 업로더 별명처럼 받을 뿐 소비를 말하지 않는다,0,에이전트 읽기,consume-llm-v1,시험
+6,Ugx-6_NYY4OGYqWbSxV4AaABAg,fb57XgHoVJA,UC0QDroTajD4HMilIqGziT9A,가챠랜덤,예,,3,에이전트 읽기,consume-llm-v1,시험
+7,Ugx9j5H-Zo8uzTaLtHB4AaABAg,uULQqXevGWQ,UCx41to3Zk5IzZV5zLsy0Uig,교환선물,예,,2,에이전트 읽기,consume-llm-v1,시험
+8,UgxxVrH642M9pKWz_dt4AaABAg,191qLSvwigc,UCBTSkFNWmoOkBeZwANcbiIA,교환선물,아니오,작품 속 선물이며 작성자 소비가 아니다,0,에이전트 읽기,consume-llm-v1,시험
+9,UgwopZwwZEeEtQXlySJ4AaABAg,fZRFy-RSQ6w,UC79RNqux_lKYaXWoazNTuFQ,교환선물,아니오,집 모양 농담이고 상품 소비가 아니다,0,에이전트 읽기,consume-llm-v1,시험
+10,UgxSuQ9pQstP-Vm2e3V4AaABAg,GXCQGQa8iEc,UCDE8HyCiujieUSiFJElpHkQ,교환선물,예,,2,에이전트 읽기,consume-llm-v1,시험
+11,UgwqtkR0d63cGr38hq94AaABAg,kpQA_5Zifw4,UCjXUIg3Mz_PhMxSXeyLdlhw,교환선물,예,,1,에이전트 읽기,consume-llm-v1,시험
+12,Ugy90MyQ8n15e7_SiL94AaABAg,UhHaOE_Otx8,UCVnFag8NDwZS8s6KXBxa5Tw,교환선물,예,,2,에이전트 읽기,consume-llm-v1,시험
+13,Ugw5544TAJHTKbCk2FZ4AaABAg,xWjzoII4u8o,UCTeTW_5SOvlzPyllohm5fPA,구매획득,예,,1,에이전트 읽기,consume-llm-v1,시험
+14,UgwBUtQw7WSkRllc4o94AaABAg,krapji3ahXI,UCCw3R58x73fOBYof86fRyRg,구매획득,예,,1,에이전트 읽기,consume-llm-v1,시험
+15,UgywpF3eH1oXuUeT5C54AaABAg,4yRhjRc58ng,UCz8hHBnVbygTz-dwnbpb9mA,구매획득,예,,1,에이전트 읽기,consume-llm-v1,시험
+16,Ugy9YX87se9AQNlzjpx4AaABAg,honrwyOJb3g,UC3bq_d91cMUtwz1AZ1nHEFg,구매획득,예,,1,에이전트 읽기,consume-llm-v1,시험
+17,UgxTefZVg0KWcyHUZuN4AaABAg,zvvMUMkYzlE,UCBTSkFNWmoOkBeZwANcbiIA,구매획득,아니오,시사야의 '사야'를 구매로 잘못 짚은 후보다,0,에이전트 읽기,consume-llm-v1,시험
+18,UgwCM-xHkyLyKsPuvEF4AaABAg,Q573nua_I3Q,UC7nwkx_0lfMQbDEudMmldFQ,구매획득,예,,1,에이전트 읽기,consume-llm-v1,시험
+19,Ugws0WIgQZyXR0d1uox4AaABAg,iCYcGPsgxAg,UClUE7d0UQ7dhLjK1r6xpG9w,굿즈일반,아니오,언박싱 리액션 칭찬이고 상품 소비가 아니다,0,에이전트 읽기,consume-llm-v1,시험
+20,Ugx-Phntu6OibNACi0V4AaABAg,Y9IsHSxEmm0,UCGrN-A4ejXuj-J88iv_REHw,굿즈일반,예,,2,에이전트 읽기,consume-llm-v1,시험
+21,UgyUcJnhmXtnsGB3SyR4AaABAg,RKAMC6Y2hxM,UC0QDroTajD4HMilIqGziT9A,굿즈일반,예,,1,에이전트 읽기,consume-llm-v1,시험
+22,Ugw5ctKGDP_A0Wlzf8J4AaABAg,d5_Z8cvOHo8,UCBTSkFNWmoOkBeZwANcbiIA,굿즈일반,예,,1,에이전트 읽기,consume-llm-v1,시험
+23,UgzXowF4SX_ScuYJOpF4AaABAg,2Aaml0YvsvU,UCBTSkFNWmoOkBeZwANcbiIA,굿즈일반,아니오,비공개의 '개봉'을 잘못 짚은 후보다,0,에이전트 읽기,consume-llm-v1,시험
+24,UgxVpy0o4dQllw2j0kF4AaABAg,mrl69tgqw2E,UCH_3v15dxjWmcdbBjII8FdA,굿즈일반,예,,1,에이전트 읽기,consume-llm-v1,시험
+25,UgyXKKY2GFbTfPIgLQ94AaABAg,Hvb85Yw-OTk,UCz8hHBnVbygTz-dwnbpb9mA,방문,예,,2,에이전트 읽기,consume-llm-v1,시험
+26,UgyOQlBJiZDQxwezknZ4AaABAg,n1GUIuQRPJk,UCiVM9EotIdiUw6r7Vq9iINg,방문,예,,3,에이전트 읽기,consume-llm-v1,시험
+27,UgxM4KUxAxOJ4_l1uuJ4AaABAg,aGQfjsWK8TI,UCBfDD3cJdeKSwZdAGHWSluA,방문,예,,2,에이전트 읽기,consume-llm-v1,시험
+28,UgyTUMQMZ_TZ5YC1dGB4AaABAg,OoJfctq1aT8,UCBTSkFNWmoOkBeZwANcbiIA,방문,예,,2,에이전트 읽기,consume-llm-v1,시험
+29,UgxZ1s_bL4f8ukdBx7B4AaABAg,2EYNyGeE40s,UCV8x8ST084OyizeGwoM-Dyg,방문,예,,2,에이전트 읽기,consume-llm-v1,시험
+30,UgzTrzQUY-yNWhqwxEB4AaABAg,NZbbeIBOpNQ,UCYck4enEhUcc2Rj0efiIzjw,방문,예,,2,에이전트 읽기,consume-llm-v1,시험
+31,UgxaiaQJfFWQce732194AaABAg,NS2mgDD0eAw,UC5AAf4_zZxk-mCl46TogZQQ,시청열람,예,,2,에이전트 읽기,consume-llm-v1,시험
+32,UgyZzp88wyW4IESVK5p4AaABAg,frC8Z-m-HRs,UCe4_BgrlQFS7kvpquuMVpWg,시청열람,예,,1,에이전트 읽기,consume-llm-v1,시험
+33,UgzzU7_KVKsqoNPIVHZ4AaABAg,jMizJGp96f4,UCo24XEiy3OMrEJM-5OfTZYQ,시청열람,예,,2,에이전트 읽기,consume-llm-v1,시험
+34,Ugy6oZgA-Cya2G8pXKF4AaABAg,-naR5grx-HE,UCXJNFT8TUTU-VEXJjHJFNdw,시청열람,예,,1,에이전트 읽기,consume-llm-v1,시험
+35,UgxaUf3COdqR49iKweB4AaABAg,VeBxz704Ilk,UCFl1G1bxOV_cTvhOJqwpSRA,시청열람,예,,1,에이전트 읽기,consume-llm-v1,시험
+36,UgwPdYTUs97xGD5rjAR4AaABAg,u-TsIQX7_do,UCjNqkzqZTYEUB8N9_2WNM2g,시청열람,예,,1,에이전트 읽기,consume-llm-v1,시험
+37,UgxpHERg5LFRxqT1hQN4AaABAg,dZCgl_U64lE,UCz8hHBnVbygTz-dwnbpb9mA,식품음료,예,,1,에이전트 읽기,consume-llm-v1,시험
+38,UgxqKjq0DSnn1bksoZJ4AaABAg,sHZVNYcsuOk,UCz8hHBnVbygTz-dwnbpb9mA,식품음료,예,,1,에이전트 읽기,consume-llm-v1,시험
+39,UgxyJrIMQFaVRg1hlat4AaABAg,VyO9cil7AvQ,UCLm0oHc0pYmvdQ0ceHdwdZg,식품음료,예,,2,에이전트 읽기,consume-llm-v1,시험
+40,Ugxtuh92tCthzqIqvNp4AaABAg,8esHBVttkFk,UCNmHn61KAwElQGjhVoTyprQ,식품음료,예,,1,에이전트 읽기,consume-llm-v1,시험
+41,UgyiIZAM6qmwUeNH0rJ4AaABAg,dZCgl_U64lE,UCz8hHBnVbygTz-dwnbpb9mA,식품음료,예,,2,에이전트 읽기,consume-llm-v1,시험
+42,Ugx-1I4SUJ4N90pJwUR4AaABAg,g708Bq9VH18,UC7dD7gNrw3BBEz_NXA51BdQ,식품음료,예,,2,에이전트 읽기,consume-llm-v1,시험
+43,UgwJbdWczL_REdA4cnF4AaABAg,nCGPd5C1syU,UC9FNiG45LYQPBKn3cukVGvA,의류생활,예,,1,에이전트 읽기,consume-llm-v1,시험
+44,UgxYmUV6FWg1kEPuGa14AaABAg,Vg7aDU0iZMM,UC_WuZ5kF9Jq3ePQRdpjJhOA,의류생활,아니오,파자마 파티즈 노랫말이며 잠옷 상품이 아니다,0,에이전트 읽기,consume-llm-v1,시험
+45,UgxiMa-lgpdKNOiZUXN4AaABAg,4Mcs9dSzaFs,UCz8hHBnVbygTz-dwnbpb9mA,의류생활,예,,1,에이전트 읽기,consume-llm-v1,시험
+46,Ugxc6_qwM-6NpV0x5qV4AaABAg,P88VS68vNu0,UCBTSkFNWmoOkBeZwANcbiIA,의류생활,아니오,회차 속 파자마를 말한 것으로 상품 구매가 아니다,0,에이전트 읽기,consume-llm-v1,시험
+47,Ugz5nEzXSZMDXBndNc14AaABAg,mVmWp4RZhWY,UCBTSkFNWmoOkBeZwANcbiIA,의류생활,아니오,제목 오타 지적이다,0,에이전트 읽기,consume-llm-v1,시험
+48,UgwGOKPJTzAWbxb6T7d4AaABAg,1JOGLRycHR8,UCnlKDuP_J5VNuog3iBxmrtA,의류생활,예,,1,에이전트 읽기,consume-llm-v1,시험
+49,UgzkGdELTP2YRlabXYh4AaABAg,ulSWYIj5r-8,UCz8hHBnVbygTz-dwnbpb9mA,인형,예,,2,에이전트 읽기,consume-llm-v1,시험
+50,UgyB73DmCpimiM3GX9t4AaABAg,lZjwlJrUPf0,UCSWsz_M5Pcp3X5peR26iELQ,인형,예,,2,에이전트 읽기,consume-llm-v1,시험
+51,Ugx1rqJhGtNnUGY_0nt4AaABAg,KndHJ-PIBrs,UCx82ohu9ATU_xBbz-464w0g,인형,예,,1,에이전트 읽기,consume-llm-v1,시험
+52,Ugz_04G24hG0O7RFLz14AaABAg,fW14T6WWAi8,UCIWIHgfC6V63i7d12ooBtcg,인형,예,,3,에이전트 읽기,consume-llm-v1,시험
+53,UgzwzPmASfQLZck8HEJ4AaABAg,_mS0CCMf8Gs,UCz8hHBnVbygTz-dwnbpb9mA,인형,예,,2,에이전트 읽기,consume-llm-v1,시험
+54,Ugzn0QSdRIIb-H39wRp4AaABAg,DZeoALC580U,UCaJJUqr3AtxoPfrDtBCWMRg,인형,예,,2,에이전트 읽기,consume-llm-v1,시험
+55,UgxgxnFBy5VoQp1VVtl4AaABAg,RKAMC6Y2hxM,UC0QDroTajD4HMilIqGziT9A,인형뽑기,아니오,풀뽑기 1급은 캐릭터 밈이고 인형뽑기가 아니다,0,에이전트 읽기,consume-llm-v1,시험
+56,UgzBmQR0EgS6FwGDL614AaABAg,0FoGBfFRN5g,UCTVvhd0w3ikGH_Ct2l8qvsA,인형뽑기,예,,1,에이전트 읽기,consume-llm-v1,시험
+57,UgzDeXWHW1AxlGMMWy54AaABAg,ZmDCNFzBLaE,UC0QDroTajD4HMilIqGziT9A,인형뽑기,예,,1,에이전트 읽기,consume-llm-v1,시험
+58,Ugz4onn8y6kvuyDSVel4AaABAg,at1FVhLJiR0,UCHwoBUvOT7hnupJ3wAwxH0Q,인형뽑기,예,,1,에이전트 읽기,consume-llm-v1,시험
+59,UgxNT_AxLHo3nzqkVxZ4AaABAg,mGXjnsPWUaw,UCosVKsA784eiU-YdRU_yvvg,인형뽑기,예,,2,에이전트 읽기,consume-llm-v1,시험
+60,Ugz4c21LF0MV6H0IA6F4AaABAg,RKAMC6Y2hxM,UC0QDroTajD4HMilIqGziT9A,인형뽑기,아니오,풀뽑기 1급은 캐릭터 밈이고 인형뽑기가 아니다,0,에이전트 읽기,consume-llm-v1,시험
+61,Ugz5mNRg36fxwa01vMF4AaABAg,jtMc2AH2V1g,UCv4dNysDNw32AsAZSPzSZOQ,카드스티커문구,예,,1,에이전트 읽기,consume-llm-v1,시험
+62,UgwFDuiWtwGw8dse-7d4AaABAg,h1YW7vAQJ-4,UC2ma1rEki-EbKH9v8HEZaLw,카드스티커문구,예,,1,에이전트 읽기,consume-llm-v1,시험
+63,Ugz0YXKYMgsyvWr6-cR4AaABAg,VhofOAXAxtQ,UCz8hHBnVbygTz-dwnbpb9mA,카드스티커문구,예,,1,에이전트 읽기,consume-llm-v1,시험
+64,UgzHLbShSg3rYm9Ii5F4AaABAg,G5vVYqy8rKo,UC2ma1rEki-EbKH9v8HEZaLw,카드스티커문구,예,,2,에이전트 읽기,consume-llm-v1,시험
+65,Ugy-KYgt1IJIDsF92Vp4AaABAg,R71iz17pNxg,UCKpoY3THgVvKGsEmD3BdspA,카드스티커문구,예,,2,에이전트 읽기,consume-llm-v1,시험
+66,UgzCF1DMIrF_v5-H-p54AaABAg,Zi-m_bvIol0,UCKpoY3THgVvKGsEmD3BdspA,카드스티커문구,예,,2,에이전트 읽기,consume-llm-v1,시험
+67,Ugwl_rtYrlycQfwI-yt4AaABAg,7JFig4vAagQ,UCBfDD3cJdeKSwZdAGHWSluA,쿠지,예,,4,에이전트 읽기,consume-llm-v1,시험
+68,UgzvbqjVdFDdW91rtoR4AaABAg,tckEiJyw_io,UCsK4opmMoeLsRsZU54ghvtQ,쿠지,예,,4,에이전트 읽기,consume-llm-v1,시험
+69,Ugxpz4yPSjqwwxKCy4B4AaABAg,kEaN8ZbNtYc,UC0QDroTajD4HMilIqGziT9A,쿠지,예,,1,에이전트 읽기,consume-llm-v1,시험
+70,UgyEwGnUFMGUlqZxtWd4AaABAg,QQjO8Bm6cXg,UC0QDroTajD4HMilIqGziT9A,쿠지,예,,1,에이전트 읽기,consume-llm-v1,시험
+71,Ugwnf_y7h01A7bKjoBZ4AaABAg,F3wMdJUJaic,UC5VjxqIcenfDIEvNw14r3Og,쿠지,예,,2,에이전트 읽기,consume-llm-v1,시험
+72,Ugxa75MHDQV3ImXn3td4AaABAg,Ifbwf9u5C6Y,UC0QDroTajD4HMilIqGziT9A,쿠지,예,,1,에이전트 읽기,consume-llm-v1,시험
+73,UgzRw2s6DLRYQEhGzEl4AaABAg,iyWA_YuOiAo,UCz8hHBnVbygTz-dwnbpb9mA,키링참,예,,2,에이전트 읽기,consume-llm-v1,시험
+74,UgxgLS6Eb0LzJ5SFZEF4AaABAg,MhgAjK2oW-M,UC9FNiG45LYQPBKn3cukVGvA,키링참,예,,1,에이전트 읽기,consume-llm-v1,시험
+75,Ugx694nGC22dd7he3cl4AaABAg,MGXlhpZWwuI,UCmvESrGK8gjt5uHeXs-HGEQ,키링참,예,,1,에이전트 읽기,consume-llm-v1,시험
+76,Ugy2bq-2RHml95fufN54AaABAg,nQdwivnJ6YY,UCsW-KD972UoFQSawMbk708Q,키링참,예,,1,에이전트 읽기,consume-llm-v1,시험
+77,Ugy-V_Tm7-LXtwhTrut4AaABAg,iyWA_YuOiAo,UCz8hHBnVbygTz-dwnbpb9mA,키링참,예,,1,에이전트 읽기,consume-llm-v1,시험
+78,Ugwxi6auMxSnBPdCYWx4AaABAg,YhRkSaM8Mk0,UC73TQ6-uoMkmpdJuwE6A2CA,키링참,예,,1,에이전트 읽기,consume-llm-v1,시험
+79,UgxJMtSCLlKOhn6Ebad4AaABAg,Sy8C9KPuZwE,UCq3Tc3K8g-8IsA5Fgf7wOBA,피규어,예,,1,에이전트 읽기,consume-llm-v1,시험
+80,UgzsxP3slzLJtJiSCWh4AaABAg,DbdMlGDvNE4,UCxeAmYxoH3duTly4FK5Km6A,피규어,예,,1,에이전트 읽기,consume-llm-v1,시험
+81,UgxPKnyCbPfdSKCoKmp4AaABAg,fb57XgHoVJA,UC0QDroTajD4HMilIqGziT9A,피규어,예,,2,에이전트 읽기,consume-llm-v1,시험
+82,UgzmfJYD2pHEebYU6xx4AaABAg,4LmGjWLmjyA,UCYck4enEhUcc2Rj0efiIzjw,피규어,예,,1,에이전트 읽기,consume-llm-v1,시험
+83,Ugw-zU5D-5kHeJa5tXt4AaABAg,4mnstmviZEI,UC0q4xPhalCttsUYhrQ-4eLA,피규어,예,,5,에이전트 읽기,consume-llm-v1,시험
+84,UgwWPoE1qkgV9ZnkXdN4AaABAg,cUP8x4qxEfM,UC0QDroTajD4HMilIqGziT9A,피규어,예,,2,에이전트 읽기,consume-llm-v1,시험

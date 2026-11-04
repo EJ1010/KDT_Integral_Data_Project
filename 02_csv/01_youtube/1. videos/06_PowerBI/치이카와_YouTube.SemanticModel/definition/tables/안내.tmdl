@@ -1,0 +1,89 @@
+table 안내
+	lineageTag: 145f3364-b2e8-4e0e-afe5-6576d97f3bef
+
+	measure '문구 1' = "A 영상 전체입니다. 댓글이 있는 영상만 보지 않습니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 99f5b120-3ed2-47ce-9646-74290819134e
+
+	measure '문구 2' = "제목은 영상 수, 댓글은 댓글 수입니다. 언급량은 선호도 순위가 아닙니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 3a692b81-7966-4d8c-b66e-39ba82d86087
+
+	measure '문구 3' = "수집·선별된 댓글에서 확인된 매력입니다. 캐릭터는 한 명씩 보고, 막대는 다시 누르면 해제됩니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: e0255084-7194-4119-b9b9-a3e8e3042c9a
+
+	measure '문구 4' = "관계, 세계관·스토리, 음성·더빙, 굿즈입니다. 표본이 작으면 탐색적 확인입니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 74f8f35c-b911-4b91-9287-0a26d1e08c20
+
+	measure '질문 1' = "한국어 제목으로 선별한 치이카와 영상은 얼마나 있고, 어떤 콘텐츠 환경을 이루는가?"
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 1b3f8cd3-2bc6-4ee0-915b-74f8bc8b728e
+
+	measure '바닥 1' = "조회수는 2026-10-26~27 수집 시점의 누적값이며, 한국 내 조회수가 아닙니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 76dba9e1-1204-4ab0-bfca-531560d12cc3
+
+	measure '질문 2' = "어떤 소재와 캐릭터가 이야기되는가?"
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 7a27f232-3d29-4f9f-87f6-8ed3dd18e564
+
+	measure '바닥 2' = "세 차트의 분모가 다릅니다. 고정 집계라 슬라이서가 없습니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 3c654401-1973-4977-8c77-aba925846218
+
+	measure '질문 3' = "캐릭터의 어떤 모습이 매력적인가?"
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 06806d96-aa62-4a93-840b-3068385f96f2
+
+	measure '바닥 3' = "긍정이고 직접 이유 또는 구체적 긍정만 셉니다. 같은 댓글은 한 번입니다. 전체 팬의 비율이 아닙니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 8ac2de0a-ba01-40d9-b2c7-205f9edb925d
+
+	measure '질문 4' = "캐릭터를 넘어 어떤 매력이 확인되었는가?"
+		formatString: @
+		displayFolder: 문구
+		lineageTag: b3d4152b-856c-43ab-8201-ce737fd0727e
+
+	measure '바닥 4' = "제안은 가설입니다. 캠페인 효과나 매출 증가가 확인된 결과가 아닙니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 498ad500-1657-4e95-b79b-bed40748e70f
+
+	measure '질문 5' = "상세조회. 본문에서 뺀 순위, 원문, 검증, AniBox 비교를 보존합니다."
+		formatString: @
+		displayFolder: 문구
+		lineageTag: 2d46c0b9-00ee-4dff-b9d8-c16a06cc5032
+
+	column 구분
+		dataType: string
+		lineageTag: 10ade412-b22d-4e5b-870b-d6ed6b9b3887
+		summarizeBy: none
+		sourceColumn: 구분
+
+		annotation SummarizationSetBy = None
+
+	partition 안내 = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("c:/Users/user/DATA_MKT_260920/03.data.project/KDT_Integral_Data_Project/02_csv/01_youtube/1. videos/06_PowerBI/data/안내.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Replaced = Table.ReplaceValue(Promoted, "", null, Replacer.ReplaceValue, {"구분"}),
+				    ChangedTypes = Table.TransformColumnTypes(Replaced, {{"구분", type text}})
+				in
+				    ChangedTypes
+
+		annotation PBI_ResultType = Table
+

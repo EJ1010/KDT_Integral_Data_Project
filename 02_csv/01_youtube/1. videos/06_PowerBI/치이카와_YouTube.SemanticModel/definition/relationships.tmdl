@@ -1,0 +1,20 @@
+relationship 댓글_영상
+	fromColumn: 댓글.post_id
+	toColumn: 영상.post_id
+
+relationship 연결_영상
+	fromColumn: 연결.post_id
+	toColumn: 영상.post_id
+
+relationship 연결_문맥
+	fromColumn: 연결.comment_id
+	toColumn: 문맥.comment_id
+
+relationship 연결_영역
+	fromColumn: 연결.평가대상
+	toColumn: 영역.영역명
+
+relationship 발견_영역
+	fromColumn: 발견가설.화면
+	toColumn: 영역.영역명
+
